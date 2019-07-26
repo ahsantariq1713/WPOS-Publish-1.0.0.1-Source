@@ -758,28 +758,6 @@ namespace WirelessPOS
             printer.AddString(string.Format("{0," + W(75) + "}{1," + W(5) + "}{2," + W(20) + ":C2}", "Due","", Entity.Due), XFont.B8, g: graphics);
 
 
-            //if (Entity.Policies != null && Entity.Policies.Count > 0 && chkPPolicies.Checked)
-            //{
-            //    printer.AddVerticalSpace(graphics);
-            //    printer.AddString(string.Format("{0,-" + W(50) + "}", "Policies"), XFont.B8, XFontColor.Gray, g: graphics);
-            //    string trxformat = "{0,-" + W(5) + "}{1,-" + W(95) + "}";
-            //    int sr = 1;
-            //    foreach (var policy in Entity.Policies)
-            //    {
-            //        var statement = new XFString(W(90), policy.Statement);
-            //        if (statement.StringLines.Count() > 0)
-            //        {
-            //            printer.AddString(string.Format(trxformat,
-            //                sr++, statement.StringLines.ToList()[0]), XFont.R8, g: graphics);
-            //            for (int i = 1; i < statement.StringLines.Count(); i++)
-            //            {
-            //                printer.AddString(string.Format(trxformat, "",
-            //                    statement.StringLines.ToList()[i]), XFont.R8, g: graphics);
-            //            }
-            //        }
-            //    }
-            //}
-
             if ( richTextBox1.Text.Length>0 && chkPPolicies.Checked)
             {
                 printer.AddVerticalSpace(graphics);

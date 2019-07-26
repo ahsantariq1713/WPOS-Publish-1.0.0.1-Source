@@ -36,7 +36,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelCustomer = new System.Windows.Forms.Panel();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label68 = new System.Windows.Forms.Label();
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
@@ -53,7 +52,6 @@
             this.panelHead = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.saleItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label10 = new System.Windows.Forms.Label();
             this.btnFindSerial = new System.Windows.Forms.Button();
             this.txtSearialSearch = new System.Windows.Forms.TextBox();
@@ -86,7 +84,6 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.txtBillAmount = new System.Windows.Forms.TextBox();
-            this.saleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtDiscount = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
             this.txtBillDiscountAmount = new System.Windows.Forms.TextBox();
@@ -148,11 +145,11 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grid = new System.Windows.Forms.DataGridView();
+            this.saleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.saleItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelCustomer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.panelHead.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.saleItemBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saleBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             this.billBtnPanel.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -166,6 +163,9 @@
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTotals)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saleItemBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelCustomer
@@ -208,10 +208,6 @@
             this.checkBox6.TabIndex = 166;
             this.checkBox6.Text = "Send Promo Message";
             this.checkBox6.UseVisualStyleBackColor = false;
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataSource = typeof(WPos.Domain.Customer);
             // 
             // label68
             // 
@@ -486,10 +482,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(57, 16);
             this.textBox1.TabIndex = 317;
-            // 
-            // saleItemBindingSource
-            // 
-            this.saleItemBindingSource.DataSource = typeof(WPos.Domain.SaleItem);
             // 
             // label10
             // 
@@ -918,10 +910,6 @@
             this.txtBillAmount.TabStop = false;
             this.txtBillAmount.Text = "100.00";
             this.txtBillAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // saleBindingSource
-            // 
-            this.saleBindingSource.DataSource = typeof(WPos.Domain.Sale);
             // 
             // txtDiscount
             // 
@@ -1865,6 +1853,18 @@
             this.grid.TabStop = false;
             this.grid.SelectionChanged += new System.EventHandler(this.Grid_SelectionChanged);
             // 
+            // saleBindingSource
+            // 
+            this.saleBindingSource.DataSource = typeof(WPos.Domain.Sale);
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataSource = typeof(WPos.Domain.Customer);
+            // 
+            // saleItemBindingSource
+            // 
+            this.saleItemBindingSource.DataSource = typeof(WPos.Domain.SaleItem);
+            // 
             // SaleEditView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1880,11 +1880,8 @@
             this.Load += new System.EventHandler(this.PurchaseEditView_Load);
             this.panelCustomer.ResumeLayout(false);
             this.panelCustomer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.panelHead.ResumeLayout(false);
             this.panelHead.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.saleItemBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saleBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.billBtnPanel.ResumeLayout(false);
@@ -1901,6 +1898,9 @@
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridTotals)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saleItemBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

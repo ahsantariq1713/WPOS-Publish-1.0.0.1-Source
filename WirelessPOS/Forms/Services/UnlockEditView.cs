@@ -68,7 +68,21 @@ namespace WirelessPOS
             devices = (await Adapter.Retrive<Device>())?.ToList();
             BindDevices();
 
-         
+            var polices =
+                  (await Adapter.Retrive<Policy>(withRelatedData: true, activeOnly: true))?.ToList()
+                  .FindAll(x =>
+                  {
+                      return XString.Equal(x.PolicyType.Name, "Unlock");
+                  });
+
+            var sb = new StringBuilder();
+            var i = 1;
+            foreach (var policy in polices)
+            {
+                sb.AppendLine(i++ + ". " + policy.Statement);
+            }
+            richTextBox1.Text = sb.ToString();
+
             InvalidateForm();
             Display();
 
@@ -416,15 +430,18 @@ namespace WirelessPOS
             printer.AddString(string.Format("{0," + W(75) + "}{1," + W(5) + "}{2," + W(20) + ":C2}", "Paid", "", Entity.Paid), XFont.R8, XFontColor.Gray, g: graphics);
             printer.AddString(string.Format("{0," + W(75) + "}{1," + W(5) + "}{2," + W(20) + ":C2}", "Due", "", Entity.Due), XFont.B8, g: graphics);
 
-            if (Entity.Policies != null && Entity.Policies.Count > 0 && chkPPolicies.Checked)
+            if (richTextBox1.Text.Length > 0 && chkPPolicies.Checked)
             {
                 printer.AddVerticalSpace(graphics);
                 printer.AddString(string.Format("{0,-" + W(50) + "}", "Policies"), XFont.B8, XFontColor.Gray, g: graphics);
                 string trxformat = "{0,-" + W(5) + "}{1,-" + W(95) + "}";
                 int sr = 1;
-                foreach (var policy in Entity.Policies)
+
+                var lines = richTextBox1.Text.Split('\n');
+
+                foreach (var ln in lines)
                 {
-                    var statement = new XFString(W(90), policy.Statement);
+                    var statement = new XFString(W(90), ln);
                     if (statement.StringLines.Count() > 0)
                     {
                         printer.AddString(string.Format(trxformat,
@@ -467,17 +484,7 @@ namespace WirelessPOS
             InvalidateForm();
         }
 
-        private void Button1_Click_1(object sender, EventArgs e)
-        {
-
-            var view = new PolicySelectionView(Adapter);
-            var result = view.ShowDialog(this);
-            if (result == DialogResult.OK)
-            {
-                Entity.Policies = view.SelectedPolicies?.ToList();
-                BindPolicies();
-            }
-        }
+        
 
         private void BtnPrint_Click(object sender, EventArgs e)
         {

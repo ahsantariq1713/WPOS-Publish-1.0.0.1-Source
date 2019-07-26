@@ -109,12 +109,9 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.policyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label23 = new System.Windows.Forms.Label();
             this.policyTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panelCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unlockBindingSource)).BeginInit();
@@ -129,7 +126,6 @@
             this.panel7.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.policyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.policyTypeBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -1357,9 +1353,7 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.panel9);
-            this.tabPage3.Controls.Add(this.listBox1);
-            this.tabPage3.Controls.Add(this.label23);
+            this.tabPage3.Controls.Add(this.richTextBox1);
             this.tabPage3.Location = new System.Drawing.Point(4, 27);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -1368,75 +1362,27 @@
             this.tabPage3.Text = "Policies";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel9.Controls.Add(this.button1);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(3, 3);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(872, 30);
-            this.panel9.TabIndex = 165;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Image = global::WirelessPOS.Properties.Resources.icons8_edit_20px;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(759, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Edit Policies";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
-            // 
-            // listBox1
-            // 
-            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox1.DataSource = this.policyBindingSource;
-            this.listBox1.DisplayMember = "Statement";
-            this.listBox1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.ForeColor = System.Drawing.Color.Black;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.HorizontalScrollbar = true;
-            this.listBox1.IntegralHeight = false;
-            this.listBox1.ItemHeight = 14;
-            this.listBox1.Location = new System.Drawing.Point(14, 45);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listBox1.Size = new System.Drawing.Size(850, 258);
-            this.listBox1.TabIndex = 164;
-            // 
             // policyBindingSource
             // 
             this.policyBindingSource.DataSource = typeof(WPos.Domain.Policy);
             // 
-            // label23
-            // 
-            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label23.BackColor = System.Drawing.Color.White;
-            this.label23.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.label23.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label23.Location = new System.Drawing.Point(1, 34);
-            this.label23.Margin = new System.Windows.Forms.Padding(0);
-            this.label23.Name = "label23";
-            this.label23.Padding = new System.Windows.Forms.Padding(5);
-            this.label23.Size = new System.Drawing.Size(876, 281);
-            this.label23.TabIndex = 166;
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // policyTypeBindingSource
             // 
             this.policyTypeBindingSource.DataSource = typeof(WPos.Domain.PolicyType);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.White;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(3, 3);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.richTextBox1.Size = new System.Drawing.Size(872, 311);
+            this.richTextBox1.TabIndex = 1;
+            this.richTextBox1.Text = "";
             // 
             // UnlockEditView
             // 
@@ -1469,7 +1415,6 @@
             this.panel7.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.policyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.policyTypeBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -1542,11 +1487,7 @@
         private System.Windows.Forms.BindingSource policyBindingSource;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.CheckBox chkPPolicies;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -1562,5 +1503,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
