@@ -1,0 +1,1155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F6068C41-69F4-4085-8D54-2180DAC5F446}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WirelessPOS</RootNamespace>
+    <AssemblyName>WirelessPOS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>C:\Users\Codex\Desktop\WPOS Publish 1.0.0.1\WPOS Application\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>22</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>1</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>Custom</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>CC1E62BB6B52BEA74F5321A731D878841A930C50</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>WirelessPOS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>wposlogo_cicled_48_jbT_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Data.Sqlite, Version=2.2.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\repos\packages\Microsoft.Data.Sqlite.Core.2.2.4\lib\netstandard2.0\Microsoft.Data.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_green, Version=1.1.14.520, Culture=neutral, PublicKeyToken=a84b7dcfb1391f7f, processorArchitecture=MSIL">
+      <HintPath>..\repos\packages\SQLitePCLRaw.bundle_green.1.1.14\lib\net45\SQLitePCLRaw.batteries_green.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2, Version=1.1.14.520, Culture=neutral, PublicKeyToken=8226ea5df37bcae9, processorArchitecture=MSIL">
+      <HintPath>..\repos\packages\SQLitePCLRaw.bundle_green.1.1.14\lib\net45\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core, Version=1.1.14.520, Culture=neutral, PublicKeyToken=1488e028ca7ab535, processorArchitecture=MSIL">
+      <HintPath>..\repos\packages\SQLitePCLRaw.core.1.1.14\lib\net45\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.e_sqlite3, Version=1.1.14.520, Culture=neutral, PublicKeyToken=9c301db686d0bd12, processorArchitecture=MSIL">
+      <HintPath>..\repos\packages\SQLitePCLRaw.provider.e_sqlite3.net45.1.1.14\lib\net45\SQLitePCLRaw.provider.e_sqlite3.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\repos\packages\System.Drawing.Common.4.5.1\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adapter.cs" />
+    <Compile Include="Forms\TaxSettingsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TaxSettingsView.Designer.cs">
+      <DependentUpon>TaxSettingsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ErrorLogView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ErrorLogView.Designer.cs">
+      <DependentUpon>ErrorLogView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ItemListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ItemListView.Designer.cs">
+      <DependentUpon>ItemListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PatternView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PatternView.Designer.cs">
+      <DependentUpon>PatternView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PolicyListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PolicyListView.Designer.cs">
+      <DependentUpon>PolicyListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OperatorEditView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OperatorEditView.Designer.cs">
+      <DependentUpon>OperatorEditView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SupplierListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SupplierListView.Designer.cs">
+      <DependentUpon>SupplierListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OperatorListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OperatorListView.Designer.cs">
+      <DependentUpon>OperatorListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LicenseView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LicenseView.Designer.cs">
+      <DependentUpon>LicenseView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TradeListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TradeListView.Designer.cs">
+      <DependentUpon>TradeListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StockView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StockView.Designer.cs">
+      <DependentUpon>StockView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DropDownSettingsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DropDownSettingsView.Designer.cs">
+      <DependentUpon>DropDownSettingsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Services\CallingCardEditView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Services\CallingCardEditView.Designer.cs">
+      <DependentUpon>CallingCardEditView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Services\UnlockEditView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Services\UnlockEditView.Designer.cs">
+      <DependentUpon>UnlockEditView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Services\PaymentEditView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Services\PaymentEditView.Designer.cs">
+      <DependentUpon>PaymentEditView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Services\PortinEditView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Services\PortinEditView.Designer.cs">
+      <DependentUpon>PortinEditView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OperatorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OperatorView.Designer.cs">
+      <DependentUpon>OperatorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoginView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginView.Designer.cs">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PolicySelectionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PolicySelectionView.Designer.cs">
+      <DependentUpon>PolicySelectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrintSettingsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrintSettingsView.Designer.cs">
+      <DependentUpon>PrintSettingsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DbSettingsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DbSettingsView.Designer.cs">
+      <DependentUpon>DbSettingsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomerEditView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerEditView.Designer.cs">
+      <DependentUpon>CustomerEditView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PolicyEditView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PolicyEditView.Designer.cs">
+      <DependentUpon>PolicyEditView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrintPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrintPreview.Designer.cs">
+      <DependentUpon>PrintPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Services\LayawayEditView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Services\LayawayEditView.Designer.cs">
+      <DependentUpon>LayawayEditView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Services\NewActivationEditView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Services\NewActivationEditView.Designer.cs">
+      <DependentUpon>NewActivationEditView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Services\RepairEditView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Services\RepairEditView.Designer.cs">
+      <DependentUpon>RepairEditView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Services\SaleEditView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Services\SaleEditView.Designer.cs">
+      <DependentUpon>SaleEditView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomerListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerListView.Designer.cs">
+      <DependentUpon>CustomerListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ErrorWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ErrorWin.Designer.cs">
+      <DependentUpon>ErrorWin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TransactionsListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TransactionsListView.Designer.cs">
+      <DependentUpon>TransactionsListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TransactionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TransactionView.Designer.cs">
+      <DependentUpon>TransactionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SearchView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SearchView.Designer.cs">
+      <DependentUpon>SearchView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Services\PurchaseEditView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Services\PurchaseEditView.Designer.cs">
+      <DependentUpon>PurchaseEditView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SupplierEditView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SupplierEditView.Designer.cs">
+      <DependentUpon>SupplierEditView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ItemEditView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ItemEditView.Designer.cs">
+      <DependentUpon>ItemEditView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SuccessWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SuccessWin.Designer.cs">
+      <DependentUpon>SuccessWin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WaitWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WaitWin.Designer.cs">
+      <DependentUpon>WaitWin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master.Designer.cs">
+      <DependentUpon>Master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\AdHandler.cs" />
+    <Compile Include="Utility\ButtonExtensions.cs" />
+    <Compile Include="Utility\ComboBoxExtensions.cs" />
+    <Compile Include="Utility\DGColumn.cs" />
+    <Compile Include="Utility\Entity.cs" />
+    <Compile Include="Utility\EntityLoader.cs" />
+    <Compile Include="Utility\G.cs" />
+    <Compile Include="Utility\Global.cs" />
+    <Compile Include="Utility\IEntityForm.cs" />
+    <Compile Include="Utility\Validator.cs" />
+    <Compile Include="Utility\Message.cs" />
+    <Compile Include="Utility\MySqlConnection.cs" />
+    <Compile Include="Utility\Printing\XPrinter.cs" />
+    <Compile Include="Utility\Security.cs" />
+    <Compile Include="Utility\Auth.cs" />
+    <Compile Include="Utility\XString.cs" />
+    <EmbeddedResource Include="Forms\TaxSettingsView.resx">
+      <DependentUpon>TaxSettingsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ErrorLogView.resx">
+      <DependentUpon>ErrorLogView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ItemListView.resx">
+      <DependentUpon>ItemListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PatternView.resx">
+      <DependentUpon>PatternView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PolicyListView.resx">
+      <DependentUpon>PolicyListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OperatorEditView.resx">
+      <DependentUpon>OperatorEditView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SupplierListView.resx">
+      <DependentUpon>SupplierListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OperatorListView.resx">
+      <DependentUpon>OperatorListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LicenseView.resx">
+      <DependentUpon>LicenseView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TradeListView.resx">
+      <DependentUpon>TradeListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StockView.resx">
+      <DependentUpon>StockView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DropDownSettingsView.resx">
+      <DependentUpon>DropDownSettingsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Services\CallingCardEditView.resx">
+      <DependentUpon>CallingCardEditView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Services\UnlockEditView.resx">
+      <DependentUpon>UnlockEditView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Services\PaymentEditView.resx">
+      <DependentUpon>PaymentEditView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Services\PortinEditView.resx">
+      <DependentUpon>PortinEditView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OperatorView.resx">
+      <DependentUpon>OperatorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginView.resx">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PolicySelectionView.resx">
+      <DependentUpon>PolicySelectionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrintSettingsView.resx">
+      <DependentUpon>PrintSettingsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DbSettingsView.resx">
+      <DependentUpon>DbSettingsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerEditView.resx">
+      <DependentUpon>CustomerEditView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PolicyEditView.resx">
+      <DependentUpon>PolicyEditView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrintPreview.resx">
+      <DependentUpon>PrintPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Services\LayawayEditView.resx">
+      <DependentUpon>LayawayEditView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Services\NewActivationEditView.resx">
+      <DependentUpon>NewActivationEditView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Services\RepairEditView.resx">
+      <DependentUpon>RepairEditView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Services\SaleEditView.resx">
+      <DependentUpon>SaleEditView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerListView.resx">
+      <DependentUpon>CustomerListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ErrorWin.resx">
+      <DependentUpon>ErrorWin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TransactionsListView.resx">
+      <DependentUpon>TransactionsListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TransactionView.resx">
+      <DependentUpon>TransactionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SearchView.resx">
+      <DependentUpon>SearchView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Services\PurchaseEditView.resx">
+      <DependentUpon>PurchaseEditView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SupplierEditView.resx">
+      <DependentUpon>SupplierEditView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ItemEditView.resx">
+      <DependentUpon>ItemEditView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SuccessWin.resx">
+      <DependentUpon>SuccessWin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WaitWin.resx">
+      <DependentUpon>WaitWin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master.resx">
+      <DependentUpon>Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\DataSources\WirelessPOS.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\WirelessPOS.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\WirelessPOS.Utility.MySqlConnection.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.AirTimePlan.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.BaseEntity.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.Brand.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.CallingCard.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.Carrier.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.Category.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.Company.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.Customer.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.Device.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.Error.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.Extensions.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.IDropDown.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.Item.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.ITransactionable.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.Layaway.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.MonthlyPlan.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.NewActivation.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.Operator.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.Payment.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.Policy.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.PolicyType.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.Portin.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.Purchase.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.PurchaseItem.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.Repair.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.RepairDevice.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.RepairStatus.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.Sale.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.SaleItem.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.StockItem.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.Supplier.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.Transaction.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.Unit.datasource" />
+    <None Include="Properties\DataSources\WPos.Domain.Unlock.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="WirelessPOS_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_save_close_17px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_save_17px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wait.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TrialMaker\Codexoft.SoftLock.csproj">
+      <Project>{2A803CAE-16F1-44C4-BF6D-2CAE88CDE659}</Project>
+      <Name>Codexoft.SoftLock</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\barcodelib-master\BarcodeStandard\BarcodeStandard.csproj">
+      <Project>{5BD9980E-EDE0-433F-B5F0-CBAF347ADFFD}</Project>
+      <Name>BarcodeStandard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WPos.DataContext\WPos.DataContext.csproj">
+      <Project>{19E12F82-1FA4-4BE5-8ACD-A80160C42B09}</Project>
+      <Name>WPos.DataContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WPos.Domain\WPos.Domain.csproj">
+      <Project>{F508EB05-181A-483B-B633-4D52077F01A1}</Project>
+      <Name>WPos.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_product_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_barcode_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_label_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_category_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_industrial_scales_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_note_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_data_configuration_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_server_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_database_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_user_shield_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_password_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_connection_sync_17px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cancel_17px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_17px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_supplier_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_address_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_message_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_phone_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_client_company_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_user_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_search_17px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_product_25px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_barcode_20px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_barcode_17px_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_buy_17px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_shopping_cart_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_buy_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_shopping_cart_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_17px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_bill_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_us_dollar_20px_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_discount_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_percentage2_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_tax_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_coins_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_edit_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_delete_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_search_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_approve_and_update_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_print_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_fine_print_30px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_transaction_list_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_checkout_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_buy_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_initiate_money_transfer_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_percentage2_20px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_percentage_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_percentage2_20px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_estimate_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_move_by_trolley_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_sell_stock_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_barcode_50px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_barcode_25px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_barcode_25px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_details_pane_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_calendar_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_calendar_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_save_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cashflow_25px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_delete_sign_17px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_submit_progress_17px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cash_in_hand_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cash__20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_ok_17px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_move_by_trolley_25px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_robot_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_client_management_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_client_management_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_user_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_request_money_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_view_details_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_print_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_export_pdf_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_export_csv_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_list_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_print_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_export_pdf_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_export_csv_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_edit_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_delete_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_view_details_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_synchronize_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_filled_filter_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_rules_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Policy_Document_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_unicast_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_checked_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cancel_25px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_error_25px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_save_close_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_microscope_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_maintenance_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_activity_history_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_multiple_devices_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_replace_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_business_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_greeting_card_20px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_receipt_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_invoice_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_report_card_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_printer_maintenance_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_filled_filter_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_task_completed_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_save_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_activity_grid2_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_refund_2_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_property_time_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_timetable_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_refund_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_enter_2_25px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_go_17px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_import_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_enter_2_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_maintenance_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_bank_card_front_side_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_buy_25px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_merchant_account_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_sell_stock_25px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_stocks_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_bank_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_unlock_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_sim_card_chip_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_token_card_code_25px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cellular_network_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WposLogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_control_panel_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_import_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_clear_symbol_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_launched_rocket_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_circled_menu_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_launch_box_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_shutdown_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_import_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_data_configuration_30px_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_printer_maintenance_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_assistant_30px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_services_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_sim_card_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cellular_network_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_idea_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_us_dollar_20px_41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_approval_20px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_approval_25px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_shutdown_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_approve_and_update_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_company_20px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_phone_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_toggle_off_17px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_toggle_on_17px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_checkout_25px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_checkout_30px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_maintenance_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cellular_network_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_bank_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_unlock_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_ringer_volume_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_verified_account_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_merchant_account_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_stocks_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cashflow_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_notification_center_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_maintenance_17px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_merchant_account_17px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_merchant_account_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_user_20px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_user_30px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_guarantee_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_key_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_time_span_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_administrator_male_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Admin_Settings_Male_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Admin_Settings_Male_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_electronic_identity_card_20px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="wposlogo_cicled_48_jbT_icon.ico" />
+    <None Include="Resources\icons8_2_circle_48px.png" />
+    <None Include="Resources\icons8_3_circle_c_26px.png" />
+    <None Include="Resources\icons8_cheap_48px.png" />
+    <None Include="Resources\icons8_1_circle_48px_1.png" />
+    <None Include="Resources\icons8_3_circle_48px.png" />
+    <None Include="Resources\icons8_4_circle_48px.png" />
+    <None Include="Resources\icons8_5_circle_48px.png" />
+    <None Include="Resources\icons8_6_circle_48px.png" />
+    <None Include="Resources\icons8_7_circle_48px.png" />
+    <None Include="Resources\icons8_8_circle_48px.png" />
+    <None Include="Resources\icons8_9_circle_48px.png" />
+    <None Include="Resources\icons8_1_c_26px.png" />
+    <None Include="Resources\icons8_2_c_26px.png" />
+    <None Include="Resources\icons8_3_c_26px.png" />
+    <None Include="Resources\icons8_4_c_26px.png" />
+    <None Include="Resources\icons8_5_c_26px.png" />
+    <None Include="Resources\icons8_6_c_26px.png" />
+    <None Include="Resources\icons8_7_c_26px.png" />
+    <None Include="Resources\icons8_8_c_26px.png" />
+    <None Include="Resources\icons8_9_c_26px.png" />
+    <None Include="Resources\icons8_1_c_20px.png" />
+    <None Include="Resources\icons8_2_c_20px.png" />
+    <None Include="Resources\icons8_9_c_20px.png" />
+    <None Include="Resources\icons8_3_c_20px.png" />
+    <None Include="Resources\icons8_5_c_20px.png" />
+    <None Include="Resources\icons8_6_c_20px.png" />
+    <None Include="Resources\icons8_7_c_20px_1.png" />
+    <None Include="Resources\icons8_8_c_20px.png" />
+    <None Include="Resources\icons8_4_c_20px.png" />
+    <None Include="Resources\icons8_filled_circle_filled_20px.png" />
+    <None Include="Resources\icons8_bank_20px.png" />
+    <Content Include="WposLogo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+  </Target>
+</Project>
