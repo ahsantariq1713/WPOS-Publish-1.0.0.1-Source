@@ -60,7 +60,7 @@
             this.label44 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.txtBillDue = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.chkIncTax = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
             this.chkPPolicies = new System.Windows.Forms.CheckBox();
@@ -109,9 +109,10 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.policyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.policyTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.chkTax = new System.Windows.Forms.CheckBox();
             this.panelCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unlockBindingSource)).BeginInit();
@@ -590,23 +591,25 @@
             this.txtBillDue.Text = "$100.00";
             this.txtBillDue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox9
+            // chkIncTax
             // 
-            this.textBox9.BackColor = System.Drawing.Color.White;
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox9.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.unlockBindingSource, "Tax", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
-            this.textBox9.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.textBox9.Location = new System.Drawing.Point(110, 140);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(57, 16);
-            this.textBox9.TabIndex = 13;
-            this.textBox9.Text = "%15.00";
+            this.chkIncTax.BackColor = System.Drawing.Color.White;
+            this.chkIncTax.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.chkIncTax.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.unlockBindingSource, "Tax", true));
+            this.chkIncTax.Enabled = false;
+            this.chkIncTax.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkIncTax.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.chkIncTax.Location = new System.Drawing.Point(110, 140);
+            this.chkIncTax.Name = "chkIncTax";
+            this.chkIncTax.Size = new System.Drawing.Size(57, 16);
+            this.chkIncTax.TabIndex = 13;
+            this.chkIncTax.Text = "0";
             // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel2.Controls.Add(this.chkTax);
             this.panel2.Controls.Add(this.btnSave);
             this.panel2.Controls.Add(this.chkPPolicies);
             this.panel2.Controls.Add(this.chkWithPayment);
@@ -614,7 +617,7 @@
             this.panel2.Controls.Add(this.billBtnPanel);
             this.panel2.Controls.Add(this.txtBillTaxAmount);
             this.panel2.Controls.Add(this.label38);
-            this.panel2.Controls.Add(this.textBox9);
+            this.panel2.Controls.Add(this.chkIncTax);
             this.panel2.Controls.Add(this.label40);
             this.panel2.Controls.Add(this.txtBillDue);
             this.panel2.Controls.Add(this.label43);
@@ -1362,14 +1365,6 @@
             this.tabPage3.Text = "Policies";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // policyBindingSource
-            // 
-            this.policyBindingSource.DataSource = typeof(WPos.Domain.Policy);
-            // 
-            // policyTypeBindingSource
-            // 
-            this.policyTypeBindingSource.DataSource = typeof(WPos.Domain.PolicyType);
-            // 
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.Color.White;
@@ -1383,6 +1378,32 @@
             this.richTextBox1.Size = new System.Drawing.Size(872, 311);
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
+            // 
+            // policyBindingSource
+            // 
+            this.policyBindingSource.DataSource = typeof(WPos.Domain.Policy);
+            // 
+            // policyTypeBindingSource
+            // 
+            this.policyTypeBindingSource.DataSource = typeof(WPos.Domain.PolicyType);
+            // 
+            // chkTax
+            // 
+            this.chkTax.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.chkTax.AutoSize = true;
+            this.chkTax.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.chkTax.FlatAppearance.BorderSize = 0;
+            this.chkTax.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.Control;
+            this.chkTax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkTax.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkTax.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.chkTax.Location = new System.Drawing.Point(6, 140);
+            this.chkTax.Name = "chkTax";
+            this.chkTax.Size = new System.Drawing.Size(61, 19);
+            this.chkTax.TabIndex = 160;
+            this.chkTax.Text = "Inc. Tax";
+            this.chkTax.UseVisualStyleBackColor = false;
+            this.chkTax.CheckedChanged += new System.EventHandler(this.chkTax_CheckedChanged);
             // 
             // UnlockEditView
             // 
@@ -1459,7 +1480,7 @@
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TextBox txtBillDue;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox chkIncTax;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtBillTaxAmount;
         private System.Windows.Forms.Label label38;
@@ -1475,7 +1496,6 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.BindingSource customerBindingSource;
-        private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.CheckBox chkWithPayment;
         private System.Windows.Forms.Panel panel10;
@@ -1486,7 +1506,6 @@
         private System.Windows.Forms.BindingSource policyTypeBindingSource;
         private System.Windows.Forms.BindingSource policyBindingSource;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.CheckBox chkPPolicies;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
@@ -1503,6 +1522,9 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.CheckBox chkTax;
     }
 }

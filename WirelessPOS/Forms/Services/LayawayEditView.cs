@@ -66,7 +66,21 @@ namespace WirelessPOS
             BindSaleItems();
             BindPolicies();
             BindCustomer();
+            var polices =
+             (await Adapter.Retrive<Policy>(withRelatedData: true, activeOnly: true))?.ToList()
+             .FindAll(x =>
+             {
+                 return XString.Equal(x.PolicyType.Name, "Layaway");
+             });
 
+            var sb = new StringBuilder();
+            var i = 1;
+            foreach (var policy in polices)
+            {
+                sb.AppendLine(i++ + ". " + policy.Statement);
+            }
+            richTextBox1.Text = sb.ToString();
+            
             InvalidateForm();
             Display();
 
@@ -520,6 +534,8 @@ namespace WirelessPOS
         }
         private async void PurchaseEditView_Load(object sender, EventArgs e)
         {
+            chkTax.Checked = Properties.Settings.Default.IncludeTax;
+            InvalidateTaxControls();
             txtCodeSearch.Focus();
             await Task.Run(() => webBrowser1.Navigate(AdHandler.AdUrl));
 
@@ -537,6 +553,36 @@ namespace WirelessPOS
     
         private void PrintReceipt(XPrinter printer)
         {
+            int W(int percent)
+            {
+                int width = int.TryParse(Properties.Settings.Default.ReceiptWidth, out int r) ? r : 100;
+                width -= 10;
+                return (int)(width * percent / 100);
+            }
+
+            string UDotted()
+            {
+                int width = int.TryParse(Properties.Settings.Default.ReceiptWidth, out int r) ? r : 100;
+                width -= 10;
+                var sb = new StringBuilder();
+                for (int i = 0; i < width; i++)
+                {
+                    sb.Append("-");
+                }
+                return sb.ToString();
+            }
+
+            string ULine()
+            {
+                int width = int.TryParse(Properties.Settings.Default.ReceiptWidth, out int r) ? r : 100;
+                width -= 10;
+                var sb = new StringBuilder();
+                for (int i = 0; i < width; i++)
+                {
+                    sb.Append("_");
+                }
+                return sb.ToString();
+            }
 
             var graphics = this.CreateGraphics();
             printer.AddString(string.Format("{0,-" + G.W(100) + "}", Properties.Settings.Default.BName), XFont.B12, g: graphics);
@@ -627,15 +673,18 @@ namespace WirelessPOS
             printer.AddString(string.Format("{0," + G.W(75) + "}{1," + G.W(5) + "}{2," + G.W(20) + ":C2}", "Paid","", Entity.Paid), XFont.R8, XFontColor.Gray, g: graphics);
             printer.AddString(string.Format("{0," + G.W(75) + "}{1," + G.W(5) + "}{2," + G.W(20) + ":C2}", "Due","", Entity.Due), XFont.B8, g: graphics);
 
-            if (Entity.Policies != null && Entity.Policies.Count > 0 && chkPPolicies.Checked)
+            if (richTextBox1.Text.Length > 0 && chkPPolicies.Checked)
             {
                 printer.AddVerticalSpace(graphics);
-                printer.AddString(string.Format("{0,-" + G.W(50) + "}", "Policies"), XFont.B8, XFontColor.Gray, g: graphics);
-                string trxformat = "{0,-" + G.W(5) + "}{1,-" + G.W(95) + "}";
+                printer.AddString(string.Format("{0,-" + W(50) + "}", "Policies"), XFont.B8, XFontColor.Gray, g: graphics);
+                string trxformat = "{0,-" + W(5) + "}{1,-" + W(95) + "}";
                 int sr = 1;
-                foreach (var policy in Entity.Policies)
+
+                var lines = richTextBox1.Text.Split('\n');
+
+                foreach (var ln in lines)
                 {
-                    var statement = new XFString(G.W(90), policy.Statement);
+                    var statement = new XFString(W(90), ln);
                     if (statement.StringLines.Count() > 0)
                     {
                         printer.AddString(string.Format(trxformat,
@@ -698,15 +747,26 @@ namespace WirelessPOS
             printer.Print(this,true);
         }
 
-        private void Button1_Click_1(object sender, EventArgs e)
+        private void chkTax_CheckedChanged(object sender, EventArgs e)
         {
-            var view = new PolicySelectionView(Adapter);
-            var result = view.ShowDialog(this);
-            if (result == DialogResult.OK)
+            InvalidateTaxControls();
+        }
+
+        private void InvalidateTaxControls()
+        {
+            if (chkTax.Checked)
             {
-                Entity.Policies = view.SelectedPolicies?.ToList();
-                BindPolicies();
+                chkIncTax.Text = Properties.Settings.Default.Tax.ToString();
+                chkIncTax.Enabled = true;
+
             }
+            else
+            {
+                chkIncTax.Text = 0.ToString();
+                chkIncTax.Enabled = false;
+            }
+
+            ValidateChildren();
         }
     }
 }

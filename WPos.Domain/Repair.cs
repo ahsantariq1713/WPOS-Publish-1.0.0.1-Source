@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -18,6 +19,7 @@ namespace WPos.Domain
         public bool IsWaterDamadge { get; set; }
         public bool WithCharger { get; set; }
         public bool WithMemoryCard { get; set; }
+        public DateTime DueDate { get; set; }
         public ICollection<Policy> Policies { get; set; }
         public override string ClientName { get => Customer?.Name; }
         public override string ClientPhone { get => Customer?.Phone; }

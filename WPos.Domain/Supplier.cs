@@ -16,7 +16,6 @@ public    class Supplier : BaseEntity
         {
             var sb = new StringBuilder();
             Name.NullCheck("Supplier Name", ref sb);
-            Company.NullCheck("Company", ref sb);
             Phone.NullCheck("Phone", ref sb);
             errors = sb.ToString();
             return errors.Length > 0;

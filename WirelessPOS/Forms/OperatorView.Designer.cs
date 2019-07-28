@@ -34,13 +34,15 @@ namespace WirelessPOS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.iTransactionableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -55,11 +57,18 @@ namespace WirelessPOS
             this.label19 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnFindTrade = new System.Windows.Forms.Button();
             this.txtTradeSearch = new System.Windows.Forms.MaskedTextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
+            this.operatorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
@@ -67,9 +76,24 @@ namespace WirelessPOS
             this.label35 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.btnPendingPayments = new System.Windows.Forms.Button();
+            this.btnExpiredLayaways = new System.Windows.Forms.Button();
+            this.btnPendingRepairs = new System.Windows.Forms.Button();
             this.label45 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.btnPurchase = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
             this.lblClosing = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
@@ -86,46 +110,22 @@ namespace WirelessPOS
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.iTransactionableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnFindTrade = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.operatorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnPendingPayments = new System.Windows.Forms.Button();
-            this.btnExpiredLayaways = new System.Windows.Forms.Button();
-            this.btnPendingRepairs = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.Column6 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label6 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iTransactionableBindingSource)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.operatorBindingSource)).BeginInit();
             this.panel8.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iTransactionableBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.operatorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel
@@ -170,6 +170,24 @@ namespace WirelessPOS
             this.panel7.Size = new System.Drawing.Size(371, 38);
             this.panel7.TabIndex = 117;
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Image = global::WirelessPOS.Properties.Resources.icons8_notification_center_25px;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Location = new System.Drawing.Point(1, 1);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(5);
+            this.label1.Size = new System.Drawing.Size(369, 36);
+            this.label1.TabIndex = 116;
+            this.label1.Text = "         Notification Center";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // panel5
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -211,6 +229,10 @@ namespace WirelessPOS
             this.label3.Size = new System.Drawing.Size(231, 15);
             this.label3.TabIndex = 132;
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // iTransactionableBindingSource
+            // 
+            this.iTransactionableBindingSource.DataSource = typeof(WPos.Domain.ITransactionable);
             // 
             // label4
             // 
@@ -448,6 +470,43 @@ namespace WirelessPOS
             this.panel3.Size = new System.Drawing.Size(465, 38);
             this.panel3.TabIndex = 1;
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::WirelessPOS.Properties.Resources.icons8_view_details_25px;
+            this.button1.Location = new System.Drawing.Point(428, 1);
+            this.button1.Margin = new System.Windows.Forms.Padding(0, 5, 5, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(36, 36);
+            this.button1.TabIndex = 22;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // btnFindTrade
+            // 
+            this.btnFindTrade.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFindTrade.AutoSize = true;
+            this.btnFindTrade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
+            this.btnFindTrade.FlatAppearance.BorderSize = 0;
+            this.btnFindTrade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFindTrade.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFindTrade.Image = global::WirelessPOS.Properties.Resources.icons8_search_25px;
+            this.btnFindTrade.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFindTrade.Location = new System.Drawing.Point(391, 1);
+            this.btnFindTrade.Margin = new System.Windows.Forms.Padding(0, 5, 5, 5);
+            this.btnFindTrade.Name = "btnFindTrade";
+            this.btnFindTrade.Size = new System.Drawing.Size(36, 36);
+            this.btnFindTrade.TabIndex = 115;
+            this.btnFindTrade.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFindTrade.UseVisualStyleBackColor = false;
+            this.btnFindTrade.Click += new System.EventHandler(this.btnFindTrade_Click);
+            // 
             // txtTradeSearch
             // 
             this.txtTradeSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -464,6 +523,23 @@ namespace WirelessPOS
             this.txtTradeSearch.Enter += new System.EventHandler(this.TxtItemSearch_Enter);
             this.txtTradeSearch.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.TxtTradeSearch_PreviewKeyDown);
             // 
+            // button2
+            // 
+            this.button2.AutoSize = true;
+            this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::WirelessPOS.Properties.Resources.icons8_print_25px;
+            this.button2.Location = new System.Drawing.Point(1, 1);
+            this.button2.Margin = new System.Windows.Forms.Padding(0, 5, 5, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(36, 36);
+            this.button2.TabIndex = 23;
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
             // label20
             // 
             this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -479,6 +555,40 @@ namespace WirelessPOS
             this.label20.TabIndex = 116;
             this.label20.Text = "Search Trade ID";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // button4
+            // 
+            this.button4.AutoSize = true;
+            this.button4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button4.Enabled = false;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Image = global::WirelessPOS.Properties.Resources.icons8_export_pdf_25px;
+            this.button4.Location = new System.Drawing.Point(38, 1);
+            this.button4.Margin = new System.Windows.Forms.Padding(0, 5, 5, 5);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(36, 36);
+            this.button4.TabIndex = 103;
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.AutoSize = true;
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Image = global::WirelessPOS.Properties.Resources.icons8_clear_symbol_25px;
+            this.button3.Location = new System.Drawing.Point(75, 1);
+            this.button3.Margin = new System.Windows.Forms.Padding(0, 5, 5, 5);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(36, 36);
+            this.button3.TabIndex = 104;
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // panel6
             // 
@@ -498,6 +608,24 @@ namespace WirelessPOS
             this.panel6.Padding = new System.Windows.Forms.Padding(1);
             this.panel6.Size = new System.Drawing.Size(194, 158);
             this.panel6.TabIndex = 133;
+            // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.AutoSize = true;
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Image = global::WirelessPOS.Properties.Resources.icons8_import_25px;
+            this.button5.Location = new System.Drawing.Point(157, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(0, 5, 5, 5);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(36, 36);
+            this.button5.TabIndex = 117;
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
             // label22
             // 
@@ -530,6 +658,10 @@ namespace WirelessPOS
             this.label30.TabIndex = 125;
             this.label30.Text = "Purchase";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // operatorBindingSource
+            // 
+            this.operatorBindingSource.DataSource = typeof(WPos.Domain.Operator);
             // 
             // label31
             // 
@@ -639,6 +771,66 @@ namespace WirelessPOS
             this.panel8.Size = new System.Drawing.Size(370, 116);
             this.panel8.TabIndex = 135;
             // 
+            // btnPendingPayments
+            // 
+            this.btnPendingPayments.BackColor = System.Drawing.Color.White;
+            this.btnPendingPayments.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPendingPayments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPendingPayments.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPendingPayments.ForeColor = System.Drawing.Color.DimGray;
+            this.btnPendingPayments.Image = global::WirelessPOS.Properties.Resources.icons8_bank_20px;
+            this.btnPendingPayments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPendingPayments.Location = new System.Drawing.Point(21, 42);
+            this.btnPendingPayments.Margin = new System.Windows.Forms.Padding(15, 15, 15, 0);
+            this.btnPendingPayments.Name = "btnPendingPayments";
+            this.btnPendingPayments.Padding = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnPendingPayments.Size = new System.Drawing.Size(333, 30);
+            this.btnPendingPayments.TabIndex = 144;
+            this.btnPendingPayments.Text = "999 Pending Payments";
+            this.btnPendingPayments.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPendingPayments.UseVisualStyleBackColor = false;
+            this.btnPendingPayments.Click += new System.EventHandler(this.BtnPendingPayments_Click);
+            // 
+            // btnExpiredLayaways
+            // 
+            this.btnExpiredLayaways.BackColor = System.Drawing.Color.White;
+            this.btnExpiredLayaways.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExpiredLayaways.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExpiredLayaways.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExpiredLayaways.ForeColor = System.Drawing.Color.DimGray;
+            this.btnExpiredLayaways.Image = global::WirelessPOS.Properties.Resources.icons8_merchant_account_20px;
+            this.btnExpiredLayaways.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExpiredLayaways.Location = new System.Drawing.Point(21, 76);
+            this.btnExpiredLayaways.Margin = new System.Windows.Forms.Padding(15, 15, 15, 0);
+            this.btnExpiredLayaways.Name = "btnExpiredLayaways";
+            this.btnExpiredLayaways.Padding = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnExpiredLayaways.Size = new System.Drawing.Size(333, 30);
+            this.btnExpiredLayaways.TabIndex = 143;
+            this.btnExpiredLayaways.Text = "999 Expired Layaways";
+            this.btnExpiredLayaways.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExpiredLayaways.UseVisualStyleBackColor = false;
+            this.btnExpiredLayaways.Click += new System.EventHandler(this.BtnExpiredLayaways_Click);
+            // 
+            // btnPendingRepairs
+            // 
+            this.btnPendingRepairs.BackColor = System.Drawing.Color.White;
+            this.btnPendingRepairs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPendingRepairs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPendingRepairs.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPendingRepairs.ForeColor = System.Drawing.Color.DimGray;
+            this.btnPendingRepairs.Image = global::WirelessPOS.Properties.Resources.icons8_maintenance_20px;
+            this.btnPendingRepairs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPendingRepairs.Location = new System.Drawing.Point(21, 7);
+            this.btnPendingRepairs.Margin = new System.Windows.Forms.Padding(15, 15, 15, 0);
+            this.btnPendingRepairs.Name = "btnPendingRepairs";
+            this.btnPendingRepairs.Padding = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnPendingRepairs.Size = new System.Drawing.Size(333, 30);
+            this.btnPendingRepairs.TabIndex = 142;
+            this.btnPendingRepairs.Text = "999 Pending Repairs";
+            this.btnPendingRepairs.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPendingRepairs.UseVisualStyleBackColor = false;
+            this.btnPendingRepairs.Click += new System.EventHandler(this.BtnPendingRepairs_Click);
+            // 
             // label45
             // 
             this.label45.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -677,7 +869,7 @@ namespace WirelessPOS
             this.panel4.Controls.Add(this.button17);
             this.panel4.Controls.Add(this.button16);
             this.panel4.Controls.Add(this.button15);
-            this.panel4.Controls.Add(this.button14);
+            this.panel4.Controls.Add(this.btnPurchase);
             this.panel4.Controls.Add(this.button13);
             this.panel4.Controls.Add(this.button12);
             this.panel4.Controls.Add(this.button11);
@@ -703,6 +895,199 @@ namespace WirelessPOS
             this.panel4.Padding = new System.Windows.Forms.Padding(1);
             this.panel4.Size = new System.Drawing.Size(1045, 366);
             this.panel4.TabIndex = 1;
+            // 
+            // button17
+            // 
+            this.button17.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button17.Image = global::WirelessPOS.Properties.Resources.icons8_user_30px_1;
+            this.button17.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button17.Location = new System.Drawing.Point(154, 293);
+            this.button17.Margin = new System.Windows.Forms.Padding(15, 0, 0, 15);
+            this.button17.Name = "button17";
+            this.button17.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.button17.Size = new System.Drawing.Size(127, 57);
+            this.button17.TabIndex = 141;
+            this.button17.Text = "Customers";
+            this.button17.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.Button17_Click);
+            // 
+            // button16
+            // 
+            this.button16.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button16.Image = global::WirelessPOS.Properties.Resources.icons8_cashflow_30px;
+            this.button16.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button16.Location = new System.Drawing.Point(84, 293);
+            this.button16.Margin = new System.Windows.Forms.Padding(15, 0, 0, 15);
+            this.button16.Name = "button16";
+            this.button16.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.button16.Size = new System.Drawing.Size(57, 57);
+            this.button16.TabIndex = 140;
+            this.button16.Text = "Trades";
+            this.button16.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.Button16_Click);
+            // 
+            // button15
+            // 
+            this.button15.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button15.Image = global::WirelessPOS.Properties.Resources.icons8_stocks_30px;
+            this.button15.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button15.Location = new System.Drawing.Point(16, 293);
+            this.button15.Margin = new System.Windows.Forms.Padding(15, 0, 0, 15);
+            this.button15.Name = "button15";
+            this.button15.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.button15.Size = new System.Drawing.Size(57, 57);
+            this.button15.TabIndex = 139;
+            this.button15.Text = "Stock";
+            this.button15.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.Button15_Click);
+            // 
+            // btnPurchase
+            // 
+            this.btnPurchase.Enabled = false;
+            this.btnPurchase.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPurchase.Image = global::WirelessPOS.Properties.Resources.icons8_buy_30px;
+            this.btnPurchase.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPurchase.Location = new System.Drawing.Point(14, 88);
+            this.btnPurchase.Margin = new System.Windows.Forms.Padding(15, 15, 0, 0);
+            this.btnPurchase.Name = "btnPurchase";
+            this.btnPurchase.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.btnPurchase.Size = new System.Drawing.Size(127, 57);
+            this.btnPurchase.TabIndex = 138;
+            this.btnPurchase.Text = "Purchase";
+            this.btnPurchase.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPurchase.UseVisualStyleBackColor = true;
+            this.btnPurchase.Click += new System.EventHandler(this.Button14_Click);
+            // 
+            // button13
+            // 
+            this.button13.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.Image = global::WirelessPOS.Properties.Resources.icons8_verified_account_30px;
+            this.button13.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button13.Location = new System.Drawing.Point(154, 88);
+            this.button13.Margin = new System.Windows.Forms.Padding(15, 15, 0, 0);
+            this.button13.Name = "button13";
+            this.button13.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.button13.Size = new System.Drawing.Size(127, 57);
+            this.button13.TabIndex = 137;
+            this.button13.Text = "New Activation";
+            this.button13.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.Button13_Click);
+            // 
+            // button12
+            // 
+            this.button12.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.Image = global::WirelessPOS.Properties.Resources.icons8_ringer_volume_30px;
+            this.button12.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button12.Location = new System.Drawing.Point(294, 88);
+            this.button12.Margin = new System.Windows.Forms.Padding(15, 15, 0, 0);
+            this.button12.Name = "button12";
+            this.button12.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.button12.Size = new System.Drawing.Size(127, 57);
+            this.button12.TabIndex = 136;
+            this.button12.Text = "Calling Card";
+            this.button12.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.Button12_Click);
+            // 
+            // button11
+            // 
+            this.button11.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Image = global::WirelessPOS.Properties.Resources.icons8_unlock_30px;
+            this.button11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button11.Location = new System.Drawing.Point(364, 16);
+            this.button11.Margin = new System.Windows.Forms.Padding(15, 15, 0, 0);
+            this.button11.Name = "button11";
+            this.button11.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.button11.Size = new System.Drawing.Size(57, 57);
+            this.button11.TabIndex = 135;
+            this.button11.Text = "Unlock";
+            this.button11.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.Button11_Click);
+            // 
+            // button10
+            // 
+            this.button10.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Image = global::WirelessPOS.Properties.Resources.icons8_merchant_account_30px;
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button10.Location = new System.Drawing.Point(294, 16);
+            this.button10.Margin = new System.Windows.Forms.Padding(15, 15, 0, 0);
+            this.button10.Name = "button10";
+            this.button10.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.button10.Size = new System.Drawing.Size(57, 57);
+            this.button10.TabIndex = 134;
+            this.button10.Text = "Layaway";
+            this.button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.Button10_Click);
+            // 
+            // button9
+            // 
+            this.button9.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Image = global::WirelessPOS.Properties.Resources.icons8_bank_30px;
+            this.button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button9.Location = new System.Drawing.Point(224, 15);
+            this.button9.Margin = new System.Windows.Forms.Padding(15, 15, 0, 0);
+            this.button9.Name = "button9";
+            this.button9.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.button9.Size = new System.Drawing.Size(57, 57);
+            this.button9.TabIndex = 133;
+            this.button9.Text = "Payment";
+            this.button9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.Button9_Click);
+            // 
+            // button8
+            // 
+            this.button8.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Image = global::WirelessPOS.Properties.Resources.icons8_cellular_network_30px;
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button8.Location = new System.Drawing.Point(154, 16);
+            this.button8.Margin = new System.Windows.Forms.Padding(15, 15, 0, 0);
+            this.button8.Name = "button8";
+            this.button8.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.button8.Size = new System.Drawing.Size(57, 57);
+            this.button8.TabIndex = 132;
+            this.button8.Text = "Portin";
+            this.button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.Button8_Click);
+            // 
+            // button7
+            // 
+            this.button7.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Image = global::WirelessPOS.Properties.Resources.icons8_maintenance_30px;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button7.Location = new System.Drawing.Point(84, 16);
+            this.button7.Margin = new System.Windows.Forms.Padding(15, 15, 0, 0);
+            this.button7.Name = "button7";
+            this.button7.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.button7.Size = new System.Drawing.Size(57, 57);
+            this.button7.TabIndex = 131;
+            this.button7.Text = "Repair";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.Button7_Click);
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Image = global::WirelessPOS.Properties.Resources.icons8_checkout_30px_2;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button6.Location = new System.Drawing.Point(14, 16);
+            this.button6.Margin = new System.Windows.Forms.Padding(15, 15, 0, 0);
+            this.button6.Name = "button6";
+            this.button6.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.button6.Size = new System.Drawing.Size(57, 57);
+            this.button6.TabIndex = 130;
+            this.button6.Text = "Sale";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Button6_Click);
             // 
             // label24
             // 
@@ -865,15 +1250,15 @@ namespace WirelessPOS
             this.grid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grid.ColumnHeadersHeight = 30;
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -889,11 +1274,11 @@ namespace WirelessPOS
             this.grid.Name = "grid";
             this.grid.ReadOnly = true;
             this.grid.RowHeadersVisible = false;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.grid.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.grid.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.grid.RowTemplate.Height = 30;
             this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grid.Size = new System.Drawing.Size(612, 211);
@@ -932,6 +1317,15 @@ namespace WirelessPOS
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "";
+            this.Column6.Image = global::WirelessPOS.Properties.Resources.icons8_view_details_20px;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column6.Width = 70;
+            // 
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -946,408 +1340,6 @@ namespace WirelessPOS
             this.label6.TabIndex = 116;
             this.label6.Text = "Transactions";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::WirelessPOS.Properties.Resources.icons8_view_details_20px;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.Width = 70;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Image = global::WirelessPOS.Properties.Resources.icons8_notification_center_25px;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(1, 1);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(5);
-            this.label1.Size = new System.Drawing.Size(369, 36);
-            this.label1.TabIndex = 116;
-            this.label1.Text = "         Notification Center";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // iTransactionableBindingSource
-            // 
-            this.iTransactionableBindingSource.DataSource = typeof(WPos.Domain.ITransactionable);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::WirelessPOS.Properties.Resources.icons8_view_details_25px;
-            this.button1.Location = new System.Drawing.Point(428, 1);
-            this.button1.Margin = new System.Windows.Forms.Padding(0, 5, 5, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(36, 36);
-            this.button1.TabIndex = 22;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // btnFindTrade
-            // 
-            this.btnFindTrade.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFindTrade.AutoSize = true;
-            this.btnFindTrade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
-            this.btnFindTrade.FlatAppearance.BorderSize = 0;
-            this.btnFindTrade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFindTrade.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFindTrade.Image = global::WirelessPOS.Properties.Resources.icons8_search_25px;
-            this.btnFindTrade.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFindTrade.Location = new System.Drawing.Point(391, 1);
-            this.btnFindTrade.Margin = new System.Windows.Forms.Padding(0, 5, 5, 5);
-            this.btnFindTrade.Name = "btnFindTrade";
-            this.btnFindTrade.Size = new System.Drawing.Size(36, 36);
-            this.btnFindTrade.TabIndex = 115;
-            this.btnFindTrade.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFindTrade.UseVisualStyleBackColor = false;
-            this.btnFindTrade.Click += new System.EventHandler(this.btnFindTrade_Click);
-            // 
-            // button2
-            // 
-            this.button2.AutoSize = true;
-            this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::WirelessPOS.Properties.Resources.icons8_print_25px;
-            this.button2.Location = new System.Drawing.Point(1, 1);
-            this.button2.Margin = new System.Windows.Forms.Padding(0, 5, 5, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(36, 36);
-            this.button2.TabIndex = 23;
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
-            // 
-            // button4
-            // 
-            this.button4.AutoSize = true;
-            this.button4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button4.Enabled = false;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = global::WirelessPOS.Properties.Resources.icons8_export_pdf_25px;
-            this.button4.Location = new System.Drawing.Point(38, 1);
-            this.button4.Margin = new System.Windows.Forms.Padding(0, 5, 5, 5);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(36, 36);
-            this.button4.TabIndex = 103;
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.AutoSize = true;
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = global::WirelessPOS.Properties.Resources.icons8_clear_symbol_25px;
-            this.button3.Location = new System.Drawing.Point(75, 1);
-            this.button3.Margin = new System.Windows.Forms.Padding(0, 5, 5, 5);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(36, 36);
-            this.button3.TabIndex = 104;
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.Button3_Click);
-            // 
-            // button5
-            // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.AutoSize = true;
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Image = global::WirelessPOS.Properties.Resources.icons8_import_25px;
-            this.button5.Location = new System.Drawing.Point(157, 2);
-            this.button5.Margin = new System.Windows.Forms.Padding(0, 5, 5, 5);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(36, 36);
-            this.button5.TabIndex = 117;
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.Button5_Click);
-            // 
-            // operatorBindingSource
-            // 
-            this.operatorBindingSource.DataSource = typeof(WPos.Domain.Operator);
-            // 
-            // btnPendingPayments
-            // 
-            this.btnPendingPayments.BackColor = System.Drawing.Color.White;
-            this.btnPendingPayments.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPendingPayments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPendingPayments.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPendingPayments.ForeColor = System.Drawing.Color.DimGray;
-            this.btnPendingPayments.Image = global::WirelessPOS.Properties.Resources.icons8_bank_20px;
-            this.btnPendingPayments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPendingPayments.Location = new System.Drawing.Point(21, 42);
-            this.btnPendingPayments.Margin = new System.Windows.Forms.Padding(15, 15, 15, 0);
-            this.btnPendingPayments.Name = "btnPendingPayments";
-            this.btnPendingPayments.Padding = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnPendingPayments.Size = new System.Drawing.Size(333, 30);
-            this.btnPendingPayments.TabIndex = 144;
-            this.btnPendingPayments.Text = "999 Pending Payments";
-            this.btnPendingPayments.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPendingPayments.UseVisualStyleBackColor = false;
-            this.btnPendingPayments.Click += new System.EventHandler(this.BtnPendingPayments_Click);
-            // 
-            // btnExpiredLayaways
-            // 
-            this.btnExpiredLayaways.BackColor = System.Drawing.Color.White;
-            this.btnExpiredLayaways.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExpiredLayaways.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExpiredLayaways.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExpiredLayaways.ForeColor = System.Drawing.Color.DimGray;
-            this.btnExpiredLayaways.Image = global::WirelessPOS.Properties.Resources.icons8_merchant_account_20px;
-            this.btnExpiredLayaways.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExpiredLayaways.Location = new System.Drawing.Point(21, 76);
-            this.btnExpiredLayaways.Margin = new System.Windows.Forms.Padding(15, 15, 15, 0);
-            this.btnExpiredLayaways.Name = "btnExpiredLayaways";
-            this.btnExpiredLayaways.Padding = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnExpiredLayaways.Size = new System.Drawing.Size(333, 30);
-            this.btnExpiredLayaways.TabIndex = 143;
-            this.btnExpiredLayaways.Text = "999 Expired Layaways";
-            this.btnExpiredLayaways.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExpiredLayaways.UseVisualStyleBackColor = false;
-            this.btnExpiredLayaways.Click += new System.EventHandler(this.BtnExpiredLayaways_Click);
-            // 
-            // btnPendingRepairs
-            // 
-            this.btnPendingRepairs.BackColor = System.Drawing.Color.White;
-            this.btnPendingRepairs.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPendingRepairs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPendingRepairs.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPendingRepairs.ForeColor = System.Drawing.Color.DimGray;
-            this.btnPendingRepairs.Image = global::WirelessPOS.Properties.Resources.icons8_maintenance_20px;
-            this.btnPendingRepairs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPendingRepairs.Location = new System.Drawing.Point(21, 7);
-            this.btnPendingRepairs.Margin = new System.Windows.Forms.Padding(15, 15, 15, 0);
-            this.btnPendingRepairs.Name = "btnPendingRepairs";
-            this.btnPendingRepairs.Padding = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnPendingRepairs.Size = new System.Drawing.Size(333, 30);
-            this.btnPendingRepairs.TabIndex = 142;
-            this.btnPendingRepairs.Text = "999 Pending Repairs";
-            this.btnPendingRepairs.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPendingRepairs.UseVisualStyleBackColor = false;
-            this.btnPendingRepairs.Click += new System.EventHandler(this.BtnPendingRepairs_Click);
-            // 
-            // button17
-            // 
-            this.button17.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button17.Image = global::WirelessPOS.Properties.Resources.icons8_user_30px_1;
-            this.button17.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button17.Location = new System.Drawing.Point(154, 293);
-            this.button17.Margin = new System.Windows.Forms.Padding(15, 0, 0, 15);
-            this.button17.Name = "button17";
-            this.button17.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.button17.Size = new System.Drawing.Size(127, 57);
-            this.button17.TabIndex = 141;
-            this.button17.Text = "Customers";
-            this.button17.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.Button17_Click);
-            // 
-            // button16
-            // 
-            this.button16.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.Image = global::WirelessPOS.Properties.Resources.icons8_cashflow_30px;
-            this.button16.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button16.Location = new System.Drawing.Point(84, 293);
-            this.button16.Margin = new System.Windows.Forms.Padding(15, 0, 0, 15);
-            this.button16.Name = "button16";
-            this.button16.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.button16.Size = new System.Drawing.Size(57, 57);
-            this.button16.TabIndex = 140;
-            this.button16.Text = "Trades";
-            this.button16.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.Button16_Click);
-            // 
-            // button15
-            // 
-            this.button15.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.Image = global::WirelessPOS.Properties.Resources.icons8_stocks_30px;
-            this.button15.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button15.Location = new System.Drawing.Point(16, 293);
-            this.button15.Margin = new System.Windows.Forms.Padding(15, 0, 0, 15);
-            this.button15.Name = "button15";
-            this.button15.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.button15.Size = new System.Drawing.Size(57, 57);
-            this.button15.TabIndex = 139;
-            this.button15.Text = "Stock";
-            this.button15.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.Button15_Click);
-            // 
-            // button14
-            // 
-            this.button14.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.Image = global::WirelessPOS.Properties.Resources.icons8_buy_30px;
-            this.button14.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button14.Location = new System.Drawing.Point(14, 88);
-            this.button14.Margin = new System.Windows.Forms.Padding(15, 15, 0, 0);
-            this.button14.Name = "button14";
-            this.button14.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.button14.Size = new System.Drawing.Size(127, 57);
-            this.button14.TabIndex = 138;
-            this.button14.Text = "Purchase";
-            this.button14.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.Button14_Click);
-            // 
-            // button13
-            // 
-            this.button13.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Image = global::WirelessPOS.Properties.Resources.icons8_verified_account_30px;
-            this.button13.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button13.Location = new System.Drawing.Point(154, 88);
-            this.button13.Margin = new System.Windows.Forms.Padding(15, 15, 0, 0);
-            this.button13.Name = "button13";
-            this.button13.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.button13.Size = new System.Drawing.Size(127, 57);
-            this.button13.TabIndex = 137;
-            this.button13.Text = "New Activation";
-            this.button13.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.Button13_Click);
-            // 
-            // button12
-            // 
-            this.button12.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Image = global::WirelessPOS.Properties.Resources.icons8_ringer_volume_30px;
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button12.Location = new System.Drawing.Point(294, 88);
-            this.button12.Margin = new System.Windows.Forms.Padding(15, 15, 0, 0);
-            this.button12.Name = "button12";
-            this.button12.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.button12.Size = new System.Drawing.Size(127, 57);
-            this.button12.TabIndex = 136;
-            this.button12.Text = "Calling Card";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.Button12_Click);
-            // 
-            // button11
-            // 
-            this.button11.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Image = global::WirelessPOS.Properties.Resources.icons8_unlock_30px;
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button11.Location = new System.Drawing.Point(364, 16);
-            this.button11.Margin = new System.Windows.Forms.Padding(15, 15, 0, 0);
-            this.button11.Name = "button11";
-            this.button11.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.button11.Size = new System.Drawing.Size(57, 57);
-            this.button11.TabIndex = 135;
-            this.button11.Text = "Unlock";
-            this.button11.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.Button11_Click);
-            // 
-            // button10
-            // 
-            this.button10.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Image = global::WirelessPOS.Properties.Resources.icons8_merchant_account_30px;
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button10.Location = new System.Drawing.Point(294, 16);
-            this.button10.Margin = new System.Windows.Forms.Padding(15, 15, 0, 0);
-            this.button10.Name = "button10";
-            this.button10.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.button10.Size = new System.Drawing.Size(57, 57);
-            this.button10.TabIndex = 134;
-            this.button10.Text = "Layaway";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.Button10_Click);
-            // 
-            // button9
-            // 
-            this.button9.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Image = global::WirelessPOS.Properties.Resources.icons8_bank_30px;
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button9.Location = new System.Drawing.Point(224, 15);
-            this.button9.Margin = new System.Windows.Forms.Padding(15, 15, 0, 0);
-            this.button9.Name = "button9";
-            this.button9.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.button9.Size = new System.Drawing.Size(57, 57);
-            this.button9.TabIndex = 133;
-            this.button9.Text = "Payment";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.Button9_Click);
-            // 
-            // button8
-            // 
-            this.button8.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Image = global::WirelessPOS.Properties.Resources.icons8_cellular_network_30px;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button8.Location = new System.Drawing.Point(154, 16);
-            this.button8.Margin = new System.Windows.Forms.Padding(15, 15, 0, 0);
-            this.button8.Name = "button8";
-            this.button8.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.button8.Size = new System.Drawing.Size(57, 57);
-            this.button8.TabIndex = 132;
-            this.button8.Text = "Portin";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.Button8_Click);
-            // 
-            // button7
-            // 
-            this.button7.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Image = global::WirelessPOS.Properties.Resources.icons8_maintenance_30px;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button7.Location = new System.Drawing.Point(84, 16);
-            this.button7.Margin = new System.Windows.Forms.Padding(15, 15, 0, 0);
-            this.button7.Name = "button7";
-            this.button7.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.button7.Size = new System.Drawing.Size(57, 57);
-            this.button7.TabIndex = 131;
-            this.button7.Text = "Repair";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.Button7_Click);
-            // 
-            // button6
-            // 
-            this.button6.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Image = global::WirelessPOS.Properties.Resources.icons8_checkout_30px_2;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button6.Location = new System.Drawing.Point(14, 16);
-            this.button6.Margin = new System.Windows.Forms.Padding(15, 15, 0, 0);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.button6.Size = new System.Drawing.Size(57, 57);
-            this.button6.TabIndex = 130;
-            this.button6.Text = "Sale";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.Button6_Click);
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "";
-            this.Column6.Image = global::WirelessPOS.Properties.Resources.icons8_view_details_20px;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column6.Width = 70;
             // 
             // lblTitle
             // 
@@ -1366,6 +1358,15 @@ namespace WirelessPOS
             this.lblTitle.Text = "         Control Panel";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblTitle.Click += new System.EventHandler(this.LblTitle_Click);
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::WirelessPOS.Properties.Resources.icons8_view_details_20px;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.Width = 70;
             // 
             // OperatorView
             // 
@@ -1388,16 +1389,16 @@ namespace WirelessPOS
             this.panel2.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.iTransactionableBindingSource)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.operatorBindingSource)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iTransactionableBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.operatorBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1471,7 +1472,7 @@ namespace WirelessPOS
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btnPurchase;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button17;

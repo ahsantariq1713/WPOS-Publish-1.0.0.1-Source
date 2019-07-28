@@ -12,8 +12,11 @@ namespace WPos.Domain
 
         public override bool HasErrors(out string errors)
         {
-            errors = null;
-            return false;
+            var sb = new StringBuilder();
+            PolicyType.NullCheck("PolicyType", ref sb);
+            Statement.NullCheck("Statement", ref sb);
+            errors = sb.ToString();
+            return errors.Length > 0;
         }
     }
 

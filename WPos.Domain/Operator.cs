@@ -26,8 +26,11 @@ namespace WPos.Domain
 
         public override bool HasErrors(out string errors)
         {
-            errors = null;
-            return false;
+            var sb = new StringBuilder();
+            User.NullCheck("Name", ref sb);
+            Password.NullCheck("Password", ref sb);
+            errors = sb.ToString();
+            return errors.Length > 0;
         }
     }
 

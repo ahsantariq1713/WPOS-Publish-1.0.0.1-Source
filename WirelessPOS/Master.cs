@@ -206,12 +206,16 @@ namespace WirelessPOS
                 databaeToolStripMenuItem.Visible = true;
                 listToolStripMenuItem1.Visible = true;
                 policiesToolStripMenuItem.Visible = true;
+                purchaseToolStripButton.Enabled = true;
+                stockToolStripMenuItem.Visible = true;
             }
             else
             {
                 databaeToolStripMenuItem.Visible = false;
                 listToolStripMenuItem1.Visible = false;
                 policiesToolStripMenuItem.Visible = false;
+                purchaseToolStripButton.Enabled = false;
+                stockToolStripMenuItem.Visible = false;
             }
         }
 
@@ -329,6 +333,11 @@ namespace WirelessPOS
         {
 
             new TaxSettingsView(this).ShowDialog();
+        }
+
+        private async void stockToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            await Adapter.Resolve<StockView, Form>(this);
         }
     }
 }

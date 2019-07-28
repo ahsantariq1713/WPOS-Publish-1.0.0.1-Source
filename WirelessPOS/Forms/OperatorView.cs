@@ -113,7 +113,6 @@ namespace WirelessPOS
 
         private void InitializeForm()
         {
-
             LoadEntites();
             Display();
         }
@@ -123,8 +122,17 @@ namespace WirelessPOS
             if (owner == null) return;
             this.MdiParent = owner;
             this.Show();
+            
+
             this.WindowState = FormWindowState.Maximized;
-          
+            if (Auth.GetOperator().Role == Role.Administrator)
+            {
+                btnPurchase.Enabled = true;
+            }
+            else
+            {
+                btnPurchase.Enabled = false;
+            }
         }
 
         private void LoadEntites()

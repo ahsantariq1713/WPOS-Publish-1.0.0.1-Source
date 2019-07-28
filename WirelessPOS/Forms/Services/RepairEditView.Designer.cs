@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RepairEditView));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelCustomer = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -100,7 +100,7 @@
             this.label44 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.txtBillDue = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.chkIncTax = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnFinish = new System.Windows.Forms.Button();
             this.chkPPolicies = new System.Windows.Forms.CheckBox();
@@ -128,6 +128,9 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.label49 = new System.Windows.Forms.Label();
@@ -176,10 +179,11 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grid = new System.Windows.Forms.DataGridView();
-            this.policyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.policyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.policyTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.chkTax = new System.Windows.Forms.CheckBox();
             this.panelCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.panelHead.SuspendLayout();
@@ -201,8 +205,8 @@
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTotals)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.policyBindingSource)).BeginInit();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.policyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.policyTypeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1186,23 +1190,25 @@
             this.txtBillDue.Text = "$100.00";
             this.txtBillDue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox9
+            // chkIncTax
             // 
-            this.textBox9.BackColor = System.Drawing.Color.White;
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox9.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.repairBindingSource, "Tax", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
-            this.textBox9.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.textBox9.Location = new System.Drawing.Point(110, 202);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(57, 16);
-            this.textBox9.TabIndex = 10;
-            this.textBox9.Text = "%15.00";
+            this.chkIncTax.BackColor = System.Drawing.Color.White;
+            this.chkIncTax.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.chkIncTax.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.repairBindingSource, "Tax", true));
+            this.chkIncTax.Enabled = false;
+            this.chkIncTax.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkIncTax.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.chkIncTax.Location = new System.Drawing.Point(110, 202);
+            this.chkIncTax.Name = "chkIncTax";
+            this.chkIncTax.Size = new System.Drawing.Size(57, 16);
+            this.chkIncTax.TabIndex = 10;
+            this.chkIncTax.Text = "0";
             // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel2.Controls.Add(this.chkTax);
             this.panel2.Controls.Add(this.btnFinish);
             this.panel2.Controls.Add(this.chkPPolicies);
             this.panel2.Controls.Add(this.chkWithPayment);
@@ -1217,7 +1223,7 @@
             this.panel2.Controls.Add(this.label54);
             this.panel2.Controls.Add(this.txtBillTaxAmount);
             this.panel2.Controls.Add(this.label38);
-            this.panel2.Controls.Add(this.textBox9);
+            this.panel2.Controls.Add(this.chkIncTax);
             this.panel2.Controls.Add(this.label40);
             this.panel2.Controls.Add(this.txtBillDue);
             this.panel2.Controls.Add(this.label43);
@@ -1639,6 +1645,9 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel4.Controls.Add(this.dateTimePicker1);
+            this.panel4.Controls.Add(this.label9);
+            this.panel4.Controls.Add(this.label16);
             this.panel4.Controls.Add(this.checkBox6);
             this.panel4.Controls.Add(this.textBox15);
             this.panel4.Controls.Add(this.label49);
@@ -1671,8 +1680,49 @@
             this.panel4.Margin = new System.Windows.Forms.Padding(10, 10, 10, 0);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(1);
-            this.panel4.Size = new System.Drawing.Size(380, 349);
+            this.panel4.Size = new System.Drawing.Size(380, 380);
             this.panel4.TabIndex = 44;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "MM/DD/YYYY";
+            this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.repairBindingSource, "DueDate", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
+            this.dateTimePicker1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(105, 263);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(271, 23);
+            this.dateTimePicker1.TabIndex = 176;
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label9.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.label9.Image = global::WirelessPOS.Properties.Resources.icons8_calendar_20px;
+            this.label9.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label9.Location = new System.Drawing.Point(1, 259);
+            this.label9.Margin = new System.Windows.Forms.Padding(0);
+            this.label9.Name = "label9";
+            this.label9.Padding = new System.Windows.Forms.Padding(5);
+            this.label9.Size = new System.Drawing.Size(100, 30);
+            this.label9.TabIndex = 174;
+            this.label9.Text = "Due Date";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.BackColor = System.Drawing.Color.White;
+            this.label16.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(102, 259);
+            this.label16.Margin = new System.Windows.Forms.Padding(0);
+            this.label16.Name = "label16";
+            this.label16.Padding = new System.Windows.Forms.Padding(5);
+            this.label16.Size = new System.Drawing.Size(277, 30);
+            this.label16.TabIndex = 175;
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // checkBox6
             // 
@@ -1684,7 +1734,7 @@
             this.checkBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox6.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.checkBox6.Location = new System.Drawing.Point(8, 322);
+            this.checkBox6.Location = new System.Drawing.Point(8, 353);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(111, 17);
             this.checkBox6.TabIndex = 164;
@@ -1697,7 +1747,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox15.BackColor = System.Drawing.Color.White;
             this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox15.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.repairBindingSource, "Pattern", true));
+            this.textBox15.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.repairBindingSource, "Pattern", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.textBox15.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox15.ForeColor = System.Drawing.Color.Black;
             this.textBox15.Location = new System.Drawing.Point(109, 236);
@@ -1965,7 +2015,7 @@
             this.checkBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox2.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.checkBox2.Location = new System.Drawing.Point(8, 269);
+            this.checkBox2.Location = new System.Drawing.Point(8, 300);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(96, 17);
             this.checkBox2.TabIndex = 156;
@@ -2023,7 +2073,7 @@
             this.checkBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox3.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.checkBox3.Location = new System.Drawing.Point(198, 269);
+            this.checkBox3.Location = new System.Drawing.Point(198, 300);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(105, 17);
             this.checkBox3.TabIndex = 157;
@@ -2070,7 +2120,7 @@
             this.checkBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox5.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.checkBox5.Location = new System.Drawing.Point(8, 296);
+            this.checkBox5.Location = new System.Drawing.Point(8, 327);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(90, 17);
             this.checkBox5.TabIndex = 160;
@@ -2087,7 +2137,7 @@
             this.checkBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox4.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.checkBox4.Location = new System.Drawing.Point(198, 295);
+            this.checkBox4.Location = new System.Drawing.Point(198, 326);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(114, 17);
             this.checkBox4.TabIndex = 161;
@@ -2116,7 +2166,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label68.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label68.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label68.Location = new System.Drawing.Point(1, 259);
+            this.label68.Location = new System.Drawing.Point(1, 290);
             this.label68.Margin = new System.Windows.Forms.Padding(0);
             this.label68.Name = "label68";
             this.label68.Padding = new System.Windows.Forms.Padding(5);
@@ -2212,11 +2262,11 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(10, 408);
+            this.tabControl1.Location = new System.Drawing.Point(10, 439);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(10);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(886, 440);
+            this.tabControl1.Size = new System.Drawing.Size(886, 409);
             this.tabControl1.TabIndex = 46;
             // 
             // tabPage2
@@ -2226,7 +2276,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 27);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(878, 409);
+            this.tabPage2.Size = new System.Drawing.Size(878, 378);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Replace Items";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -2242,7 +2292,7 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(10);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(1);
-            this.panel1.Size = new System.Drawing.Size(878, 346);
+            this.panel1.Size = new System.Drawing.Size(878, 315);
             this.panel1.TabIndex = 41;
             // 
             // panel8
@@ -2255,7 +2305,7 @@
             this.panel8.Location = new System.Drawing.Point(1, 1);
             this.panel8.Margin = new System.Windows.Forms.Padding(0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(876, 345);
+            this.panel8.Size = new System.Drawing.Size(876, 314);
             this.panel8.TabIndex = 133;
             // 
             // gridTotals
@@ -2270,15 +2320,15 @@
             this.gridTotals.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gridTotals.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.gridTotals.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTotals.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTotals.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.gridTotals.ColumnHeadersHeight = 30;
             this.gridTotals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gridTotals.ColumnHeadersVisible = false;
@@ -2290,16 +2340,16 @@
             this.Column5,
             this.Column6,
             this.Column7});
-            this.gridTotals.Location = new System.Drawing.Point(1, 313);
+            this.gridTotals.Location = new System.Drawing.Point(1, 282);
             this.gridTotals.MultiSelect = false;
             this.gridTotals.Name = "gridTotals";
             this.gridTotals.ReadOnly = true;
             this.gridTotals.RowHeadersVisible = false;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            this.gridTotals.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
+            this.gridTotals.RowsDefaultCellStyle = dataGridViewCellStyle18;
             this.gridTotals.RowTemplate.Height = 30;
             this.gridTotals.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridTotals.Size = new System.Drawing.Size(876, 30);
@@ -2361,15 +2411,15 @@
             this.grid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.grid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle19.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.grid.ColumnHeadersHeight = 30;
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.grid.Location = new System.Drawing.Point(0, -4);
@@ -2377,28 +2427,24 @@
             this.grid.Name = "grid";
             this.grid.ReadOnly = true;
             this.grid.RowHeadersVisible = false;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            this.grid.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle20.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
+            this.grid.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.grid.RowTemplate.Height = 30;
             this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grid.Size = new System.Drawing.Size(876, 318);
+            this.grid.Size = new System.Drawing.Size(876, 287);
             this.grid.TabIndex = 130;
             this.grid.TabStop = false;
             this.grid.SelectionChanged += new System.EventHandler(this.Grid_SelectionChanged);
-            // 
-            // policyBindingSource
-            // 
-            this.policyBindingSource.DataSource = typeof(WPos.Domain.Policy);
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.richTextBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 27);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(878, 409);
+            this.tabPage1.Size = new System.Drawing.Size(878, 378);
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Policies";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -2413,13 +2459,35 @@
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextBox1.Size = new System.Drawing.Size(878, 409);
+            this.richTextBox1.Size = new System.Drawing.Size(878, 378);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
+            // 
+            // policyBindingSource
+            // 
+            this.policyBindingSource.DataSource = typeof(WPos.Domain.Policy);
             // 
             // policyTypeBindingSource
             // 
             this.policyTypeBindingSource.DataSource = typeof(WPos.Domain.PolicyType);
+            // 
+            // chkTax
+            // 
+            this.chkTax.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.chkTax.AutoSize = true;
+            this.chkTax.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.chkTax.FlatAppearance.BorderSize = 0;
+            this.chkTax.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.Control;
+            this.chkTax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkTax.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkTax.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.chkTax.Location = new System.Drawing.Point(6, 202);
+            this.chkTax.Name = "chkTax";
+            this.chkTax.Size = new System.Drawing.Size(61, 19);
+            this.chkTax.TabIndex = 165;
+            this.chkTax.Text = "Inc. Tax";
+            this.chkTax.UseVisualStyleBackColor = false;
+            this.chkTax.CheckedChanged += new System.EventHandler(this.chkTax_CheckedChanged);
             // 
             // RepairEditView
             // 
@@ -2460,8 +2528,8 @@
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridTotals)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.policyBindingSource)).EndInit();
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.policyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.policyTypeBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -2525,7 +2593,7 @@
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TextBox txtBillDue;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox chkIncTax;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtBillTaxAmount;
         private System.Windows.Forms.Label label38;
@@ -2614,5 +2682,9 @@
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.CheckBox chkTax;
     }
 }

@@ -60,7 +60,22 @@ namespace WirelessPOS
             Entity.Transactions = Entity.Transactions ?? new List<Transaction>();
 
             BindEntity();
+            var polices =
+                 (await Adapter.Retrive<Policy>(withRelatedData: true, activeOnly: true))?.ToList()
+                 .FindAll(x =>
+                 {
+                     return XString.Equal(x.PolicyType.Name, "Purchase");
+                 });
 
+            var sb = new StringBuilder();
+            var i = 1;
+            foreach (var policy in polices)
+            {
+                sb.AppendLine(i++ + ". " + policy.Statement);
+            }
+            richTextBox1.Text = sb.ToString();
+
+            chkTax.Checked = Properties.Settings.Default.IncludeTax;
             InvalidateForm();
             Display();
 
@@ -421,7 +436,7 @@ namespace WirelessPOS
             btnFinish.MarkBusy(out Image image, out Color color);
             var isNew = Entity.IsNew;
             var changes = await Adapter.Save(Entity);
-            MessageBox.Show("Changes = " + changes);
+          
             btnFinish.MarkFree(image, color);
             if (changes > 0 && isNew)
             {
@@ -525,6 +540,8 @@ namespace WirelessPOS
 
         private async void PurchaseEditView_Load(object sender, EventArgs e)
         {
+            chkTax.Checked = Properties.Settings.Default.IncludeTax;
+            InvalidateTaxControls();
             txtCodeSearch.Focus();
             await Task.Run(() => webBrowser1.Navigate(AdHandler.AdUrl));
         }
@@ -532,9 +549,9 @@ namespace WirelessPOS
         private void BtnPreview_Click(object sender, EventArgs e)
         {
             XPrinter printer = new XPrinter(topMargin: 10, leftMargin: 10);
-            MessageBox.Show("Strting Print...");
+       
             PrintReceipt(printer);
-            MessageBox.Show("Previewing...");
+          
 
             printer.Preview(this);
         }
@@ -542,7 +559,37 @@ namespace WirelessPOS
 
         private void PrintReceipt(XPrinter printer)
         {
-           
+            int W(int percent)
+            {
+                int width = int.TryParse(Properties.Settings.Default.ReceiptWidth, out int r) ? r : 100;
+                width -= 10;
+                return (int)(width * percent / 100);
+            }
+
+            string UDotted()
+            {
+                int width = int.TryParse(Properties.Settings.Default.ReceiptWidth, out int r) ? r : 100;
+                width -= 10;
+                var sb = new StringBuilder();
+                for (int i = 0; i < width; i++)
+                {
+                    sb.Append("-");
+                }
+                return sb.ToString();
+            }
+
+            string ULine()
+            {
+                int width = int.TryParse(Properties.Settings.Default.ReceiptWidth, out int r) ? r : 100;
+                width -= 10;
+                var sb = new StringBuilder();
+                for (int i = 0; i < width; i++)
+                {
+                    sb.Append("_");
+                }
+                return sb.ToString();
+            }
+
 
             var graphics = this.CreateGraphics();
             printer.AddString(string.Format("{0,-" + G.W(100) + "}", Properties.Settings.Default.BName), XFont.B12, g: graphics);
@@ -570,7 +617,7 @@ namespace WirelessPOS
             printer.AddVerticalSpace(graphics);
             printer.AddString(G.ULine(), XFont.B8, g: graphics);
 
-            MessageBox.Show("printing purchase items...");
+        
             if (Entity.PurchaseItems != null && Entity.PurchaseItems.Count > 0)
             {
                 printer.AddVerticalSpace(graphics);
@@ -602,7 +649,7 @@ namespace WirelessPOS
                 printer.AddVerticalSpace(graphics);
 
             }
-            MessageBox.Show("Printing totals...");
+         
             printer.AddString(string.Format("{0," + G.W(75) + "}{1," + G.W(5) + "}{2," + G.W(20) + ":C2}", "Bill Amount", "", Entity.Amount), XFont.R8, g: graphics);
             printer.AddString(string.Format("{0," + G.W(75) + "}{1," + G.W(5) + "}{2," + G.W(20) + ":C2}", "Discount", " %" + Entity.Discount, Entity.DiscountAmount), XFont.R8, XFontColor.Gray, g: graphics);
             printer.AddString(string.Format("{0," + G.W(75) + "}{1," + G.W(5) + "}{2," + G.W(20) + ":C2}", "Subtotal", "", Entity.Subtotal), XFont.R8, g: graphics);
@@ -631,7 +678,30 @@ namespace WirelessPOS
             printer.AddString(string.Format("{0," + G.W(75) + "}{1," + G.W(5) + "}{2," + G.W(20) + ":C2}", "Paid", "", Entity.Paid), XFont.R8, XFontColor.Gray, g: graphics);
             printer.AddString(string.Format("{0," + G.W(75) + "}{1," + G.W(5) + "}{2," + G.W(20) + ":C2}", "Due", "", Entity.Due), XFont.B8, g: graphics);
 
-          
+            if (richTextBox1.Text.Length > 0 && chkPPolicies.Checked)
+            {
+                printer.AddVerticalSpace(graphics);
+                printer.AddString(string.Format("{0,-" + W(50) + "}", "Policies"), XFont.B8, XFontColor.Gray, g: graphics);
+                string trxformat = "{0,-" + W(5) + "}{1,-" + W(95) + "}";
+                int sr = 1;
+
+                var lines = richTextBox1.Text.Split('\n');
+
+                foreach (var ln in lines)
+                {
+                    var statement = new XFString(W(90), ln);
+                    if (statement.StringLines.Count() > 0)
+                    {
+                        printer.AddString(string.Format(trxformat,
+                            sr++, statement.StringLines.ToList()[0]), XFont.R8, g: graphics);
+                        for (int i = 1; i < statement.StringLines.Count(); i++)
+                        {
+                            printer.AddString(string.Format(trxformat, "",
+                                statement.StringLines.ToList()[i]), XFont.R8, g: graphics);
+                        }
+                    }
+                }
+            }
             printer.AddVerticalSpace(graphics);
 
             var greeting = new XFString(G.W(100), Properties.Settings.Default.CGreeting);
@@ -656,6 +726,28 @@ namespace WirelessPOS
         private void TxtItemSearch_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void chkTax_CheckedChanged(object sender, EventArgs e)
+        {
+            InvalidateTaxControls();
+        }
+
+        private void InvalidateTaxControls()
+        {
+            if (chkTax.Checked)
+            {
+                chkIncTax.Text = Properties.Settings.Default.Tax.ToString();
+                chkIncTax.Enabled = true;
+
+            }
+            else
+            {
+                chkIncTax.Text = 0.ToString();
+                chkIncTax.Enabled = false;
+            }
+
+            ValidateChildren();
         }
     }
 }

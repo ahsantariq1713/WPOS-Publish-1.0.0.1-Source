@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PurchaseEditView));
             this.panelSupplier = new System.Windows.Forms.Panel();
             this.btnAddSupplier = new System.Windows.Forms.Button();
@@ -118,11 +118,11 @@
             this.label44 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.txtBillDue = new System.Windows.Forms.TextBox();
-            this.txtTax = new System.Windows.Forms.TextBox();
+            this.chkIncTax = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label45 = new System.Windows.Forms.Label();
+            this.chkPPolicies = new System.Windows.Forms.CheckBox();
             this.chkWithPayment = new System.Windows.Forms.CheckBox();
-            this.label61 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
             this.billBtnPanel = new System.Windows.Forms.Panel();
             this.btnUpdateStock = new System.Windows.Forms.Button();
             this.btnTransaction = new System.Windows.Forms.Button();
@@ -148,10 +148,15 @@
             this.label47 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.panel7 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.chkTax = new System.Windows.Forms.CheckBox();
             this.panelSupplier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
@@ -167,6 +172,9 @@
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel7.SuspendLayout();
             this.SuspendLayout();
@@ -421,18 +429,17 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel1.Controls.Add(this.gridTotals);
             this.panel1.Controls.Add(this.grid);
             this.panel1.Controls.Add(this.gridBtnsPanel);
             this.panel1.Controls.Add(this.label23);
-            this.panel1.Location = new System.Drawing.Point(10, 316);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(10);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(1);
-            this.panel1.Size = new System.Drawing.Size(886, 532);
+            this.panel1.Size = new System.Drawing.Size(878, 501);
             this.panel1.TabIndex = 41;
             // 
             // gridTotals
@@ -445,15 +452,15 @@
             this.gridTotals.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gridTotals.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.gridTotals.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTotals.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTotals.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.gridTotals.ColumnHeadersHeight = 30;
             this.gridTotals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gridTotals.ColumnHeadersVisible = false;
@@ -467,19 +474,19 @@
             this.Column6,
             this.Column7});
             this.gridTotals.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridTotals.Location = new System.Drawing.Point(1, 501);
+            this.gridTotals.Location = new System.Drawing.Point(1, 470);
             this.gridTotals.MultiSelect = false;
             this.gridTotals.Name = "gridTotals";
             this.gridTotals.ReadOnly = true;
             this.gridTotals.RowHeadersVisible = false;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.gridTotals.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
+            this.gridTotals.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.gridTotals.RowTemplate.Height = 30;
             this.gridTotals.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridTotals.Size = new System.Drawing.Size(884, 30);
+            this.gridTotals.Size = new System.Drawing.Size(876, 30);
             this.gridTotals.TabIndex = 131;
             this.gridTotals.TabStop = false;
             // 
@@ -541,15 +548,15 @@
             this.grid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.grid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.grid.ColumnHeadersHeight = 30;
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.grid.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -558,14 +565,14 @@
             this.grid.Name = "grid";
             this.grid.ReadOnly = true;
             this.grid.RowHeadersVisible = false;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.grid.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
+            this.grid.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.grid.RowTemplate.Height = 30;
             this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grid.Size = new System.Drawing.Size(884, 490);
+            this.grid.Size = new System.Drawing.Size(876, 459);
             this.grid.TabIndex = 130;
             this.grid.TabStop = false;
             this.grid.SelectionChanged += new System.EventHandler(this.Grid_SelectionChanged);
@@ -577,7 +584,7 @@
             this.gridBtnsPanel.Controls.Add(this.btnDeleteRow);
             this.gridBtnsPanel.Controls.Add(this.btnEditRow);
             this.gridBtnsPanel.Controls.Add(this.label22);
-            this.gridBtnsPanel.Location = new System.Drawing.Point(816, 2);
+            this.gridBtnsPanel.Location = new System.Drawing.Point(808, 2);
             this.gridBtnsPanel.Name = "gridBtnsPanel";
             this.gridBtnsPanel.Size = new System.Drawing.Size(68, 37);
             this.gridBtnsPanel.TabIndex = 132;
@@ -647,7 +654,7 @@
             this.label23.Margin = new System.Windows.Forms.Padding(0);
             this.label23.Name = "label23";
             this.label23.Padding = new System.Windows.Forms.Padding(5);
-            this.label23.Size = new System.Drawing.Size(884, 40);
+            this.label23.Size = new System.Drawing.Size(876, 40);
             this.label23.TabIndex = 43;
             this.label23.Text = "          Items";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1405,29 +1412,31 @@
             this.txtBillDue.TabStop = false;
             this.txtBillDue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // txtTax
+            // chkIncTax
             // 
-            this.txtTax.BackColor = System.Drawing.Color.White;
-            this.txtTax.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTax.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.purchaseBindingSource, "Tax", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
-            this.txtTax.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTax.Location = new System.Drawing.Point(110, 143);
-            this.txtTax.Name = "txtTax";
-            this.txtTax.Size = new System.Drawing.Size(57, 16);
-            this.txtTax.TabIndex = 8;
-            this.txtTax.Text = "%15.00";
+            this.chkIncTax.BackColor = System.Drawing.Color.White;
+            this.chkIncTax.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.chkIncTax.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.purchaseBindingSource, "Tax", true));
+            this.chkIncTax.Enabled = false;
+            this.chkIncTax.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkIncTax.Location = new System.Drawing.Point(110, 143);
+            this.chkIncTax.Name = "chkIncTax";
+            this.chkIncTax.Size = new System.Drawing.Size(57, 16);
+            this.chkIncTax.TabIndex = 8;
+            this.chkIncTax.Text = "0";
             // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel2.Controls.Add(this.label45);
+            this.panel2.Controls.Add(this.chkTax);
+            this.panel2.Controls.Add(this.chkPPolicies);
             this.panel2.Controls.Add(this.chkWithPayment);
-            this.panel2.Controls.Add(this.label61);
+            this.panel2.Controls.Add(this.label45);
             this.panel2.Controls.Add(this.billBtnPanel);
             this.panel2.Controls.Add(this.txtBillTaxAmount);
             this.panel2.Controls.Add(this.label38);
-            this.panel2.Controls.Add(this.txtTax);
+            this.panel2.Controls.Add(this.chkIncTax);
             this.panel2.Controls.Add(this.label40);
             this.panel2.Controls.Add(this.txtBillDue);
             this.panel2.Controls.Add(this.label43);
@@ -1456,19 +1465,22 @@
             this.panel2.Size = new System.Drawing.Size(370, 533);
             this.panel2.TabIndex = 43;
             // 
-            // label45
+            // chkPPolicies
             // 
-            this.label45.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label45.BackColor = System.Drawing.Color.White;
-            this.label45.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.ForeColor = System.Drawing.Color.DimGray;
-            this.label45.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.label45.Location = new System.Drawing.Point(1, 284);
-            this.label45.Margin = new System.Windows.Forms.Padding(0);
-            this.label45.Name = "label45";
-            this.label45.Padding = new System.Windows.Forms.Padding(5);
-            this.label45.Size = new System.Drawing.Size(368, 104);
-            this.label45.TabIndex = 161;
+            this.chkPPolicies.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.chkPPolicies.AutoSize = true;
+            this.chkPPolicies.BackColor = System.Drawing.Color.White;
+            this.chkPPolicies.FlatAppearance.BorderSize = 0;
+            this.chkPPolicies.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.Control;
+            this.chkPPolicies.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkPPolicies.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkPPolicies.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.chkPPolicies.Location = new System.Drawing.Point(116, 361);
+            this.chkPPolicies.Name = "chkPPolicies";
+            this.chkPPolicies.Size = new System.Drawing.Size(84, 17);
+            this.chkPPolicies.TabIndex = 162;
+            this.chkPPolicies.Text = "Print Policies";
+            this.chkPPolicies.UseVisualStyleBackColor = false;
             // 
             // chkWithPayment
             // 
@@ -1480,28 +1492,28 @@
             this.chkWithPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.chkWithPayment.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkWithPayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.chkWithPayment.Location = new System.Drawing.Point(17, 498);
+            this.chkWithPayment.Location = new System.Drawing.Point(11, 361);
             this.chkWithPayment.Name = "chkWithPayment";
             this.chkWithPayment.Size = new System.Drawing.Size(99, 17);
             this.chkWithPayment.TabIndex = 160;
             this.chkWithPayment.Text = "Payment History";
             this.chkWithPayment.UseVisualStyleBackColor = false;
             // 
-            // label61
+            // label45
             // 
-            this.label61.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label61.BackColor = System.Drawing.Color.White;
-            this.label61.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label61.ForeColor = System.Drawing.Color.DimGray;
-            this.label61.Image = global::WirelessPOS.Properties.Resources.icons8_activity_history_20px;
-            this.label61.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.label61.Location = new System.Drawing.Point(10, 465);
-            this.label61.Margin = new System.Windows.Forms.Padding(0);
-            this.label61.Name = "label61";
-            this.label61.Padding = new System.Windows.Forms.Padding(5);
-            this.label61.Size = new System.Drawing.Size(224, 57);
-            this.label61.TabIndex = 159;
-            this.label61.Text = "Print Rules";
+            this.label45.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label45.BackColor = System.Drawing.Color.White;
+            this.label45.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.ForeColor = System.Drawing.Color.DimGray;
+            this.label45.Image = global::WirelessPOS.Properties.Resources.icons8_activity_history_20px;
+            this.label45.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label45.Location = new System.Drawing.Point(3, 284);
+            this.label45.Margin = new System.Windows.Forms.Padding(0);
+            this.label45.Name = "label45";
+            this.label45.Padding = new System.Windows.Forms.Padding(5);
+            this.label45.Size = new System.Drawing.Size(367, 104);
+            this.label45.TabIndex = 161;
+            this.label45.Text = "Print Rules";
             // 
             // billBtnPanel
             // 
@@ -1886,10 +1898,10 @@
             // 
             this.panel6.AutoScroll = true;
             this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.Controls.Add(this.tabControl1);
             this.panel6.Controls.Add(this.panel10);
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Controls.Add(this.panel2);
-            this.panel6.Controls.Add(this.panel1);
             this.panel6.Controls.Add(this.panel3);
             this.panel6.Controls.Add(this.panelSupplier);
             this.panel6.Controls.Add(this.panel4);
@@ -1900,6 +1912,56 @@
             this.panel6.Size = new System.Drawing.Size(1286, 859);
             this.panel6.TabIndex = 0;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel6_Paint);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(10, 317);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(10);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(886, 532);
+            this.tabControl1.TabIndex = 49;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 27);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(878, 501);
+            this.tabPage1.TabIndex = 3;
+            this.tabPage1.Text = "Items";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.richTextBox1);
+            this.tabPage3.Location = new System.Drawing.Point(4, 27);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(878, 501);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Policies";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.White;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(3, 3);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.richTextBox1.Size = new System.Drawing.Size(872, 495);
+            this.richTextBox1.TabIndex = 1;
+            this.richTextBox1.Text = "";
             // 
             // panel10
             // 
@@ -1949,6 +2011,24 @@
             this.lblTitle.TabIndex = 24;
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // chkTax
+            // 
+            this.chkTax.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.chkTax.AutoSize = true;
+            this.chkTax.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.chkTax.FlatAppearance.BorderSize = 0;
+            this.chkTax.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.Control;
+            this.chkTax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkTax.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkTax.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.chkTax.Location = new System.Drawing.Point(6, 143);
+            this.chkTax.Name = "chkTax";
+            this.chkTax.Size = new System.Drawing.Size(61, 19);
+            this.chkTax.TabIndex = 164;
+            this.chkTax.Text = "Inc. Tax";
+            this.chkTax.UseVisualStyleBackColor = false;
+            this.chkTax.CheckedChanged += new System.EventHandler(this.chkTax_CheckedChanged);
+            // 
             // PurchaseEditView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1982,6 +2062,9 @@
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -2063,7 +2146,7 @@
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TextBox txtBillDue;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.TextBox txtTax;
+        private System.Windows.Forms.TextBox chkIncTax;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtBillTaxAmount;
         private System.Windows.Forms.Label label38;
@@ -2105,7 +2188,12 @@
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.CheckBox chkWithPayment;
-        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.CheckBox chkPPolicies;
+        private System.Windows.Forms.CheckBox chkTax;
     }
 }

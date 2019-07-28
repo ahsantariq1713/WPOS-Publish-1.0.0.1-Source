@@ -89,6 +89,8 @@ namespace WirelessPOS
                 sb.AppendLine(i++ +". "+ policy.Statement);
             }
             richTextBox1.Text = sb.ToString();
+            ddlRepairDevice.SelectedIndex = -1;
+            ddlRepairStatus.SelectedIndex = 0;
 
             InvalidateForm();
             Display();
@@ -606,6 +608,8 @@ namespace WirelessPOS
         }
         private async void PurchaseEditView_Load(object sender, EventArgs e)
         {
+            chkTax.Checked = Properties.Settings.Default.IncludeTax;
+            InvalidateTaxControls();
             txtCodeSearch.Focus();
             await Task.Run(() => webBrowser1.Navigate(AdHandler.AdUrl));
         }
@@ -831,6 +835,29 @@ namespace WirelessPOS
           var view =   new PatternView(textBox15.Text.ToCharArray());
           view.ShowDialog();
           textBox15.Text = view.ResultPattern;
+          Entity.Pattern = view.ResultPattern;
+        }
+
+        private void chkTax_CheckedChanged(object sender, EventArgs e)
+        {
+            InvalidateTaxControls();
+        }
+
+        private void InvalidateTaxControls()
+        {
+            if (chkTax.Checked)
+            {
+                chkIncTax.Text = Properties.Settings.Default.Tax.ToString();
+                chkIncTax.Enabled = true;
+
+            }
+            else
+            {
+                chkIncTax.Text = 0.ToString();
+                chkIncTax.Enabled = false;
+            }
+
+            ValidateChildren();
         }
     }
 }

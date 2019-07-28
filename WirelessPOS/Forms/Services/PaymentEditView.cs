@@ -75,8 +75,24 @@ namespace WirelessPOS
 
             mPlans = (await Adapter.Retrive<MonthlyPlan>())?.ToList();
             BindMonthlyPlans();
+            var polices =
+               (await Adapter.Retrive<Policy>(withRelatedData: true, activeOnly: true))?.ToList()
+               .FindAll(x =>
+               {
+                   return XString.Equal(x.PolicyType.Name, "Payment");
+               });
 
+            var sb = new StringBuilder();
+            var i = 1;
+            foreach (var policy in polices)
+            {
+                sb.AppendLine(i++ + ". " + policy.Statement);
+            }
+            richTextBox1.Text = sb.ToString();
 
+            ddlCarrier.SelectedIndex = -1;
+            ddlCompany.SelectedIndex = -1;
+            ddlMonthlyPlan.SelectedIndex = -1;
             InvalidateForm();
             Display();
 
@@ -395,6 +411,8 @@ namespace WirelessPOS
         }
         private async void PurchaseEditView_Load(object sender, EventArgs e)
         {
+            chkTax.Checked = Properties.Settings.Default.IncludeTax;
+            InvalidateTaxControls();
             await Task.Run(() => webBrowser1.Navigate(AdHandler.AdUrl));
         }
 
@@ -468,22 +486,21 @@ namespace WirelessPOS
             printer.AddString(string.Format("{0,-" + W(50) + "}", "Details"), XFont.B8, XFontColor.Gray, g: graphics);
 
             printer.AddString(string.Format("{0,-" + W(15) + "}{1,-" + W(35) + "}", "Phone No", ": " + Entity.Phone), XFont.R8, XFontColor.Black, g: graphics);
-            MessageBox.Show("printing carrier...");
+          
             printer.AddString(string.Format("{0,-" + W(15) + "}{1,-" + W(35) + "}{2,-" + W(15) + "}{3,-" + W(35) + "}", "Carrier", ": "+Entity.Carrier.Name, "Company", ": " + Entity.Company.Name), XFont.R8, XFontColor.Black, g: graphics);
-            MessageBox.Show("printing plan...");
+           
             printer.AddString(string.Format("{0,-" + W(15) + "}{1,-" + W(35) + "}{2,-" + W(15) + "}{3,-" + W(35) + ":C2}", "Monthly Plan", ": " + Entity.MonthlyPlan.Name, "Rate", ": " + Entity.Rate), XFont.R8, XFontColor.Black, g: graphics);
             printer.AddVerticalSpace(graphics);
-            MessageBox.Show("printing promo...");
+           
             printer.AddString(string.Format("{0,-" + W(35) + "}{1,-" + W(15) + "}", "Send Promo Message?", Entity.SendPromoMessage?"Yes":"NO"), XFont.R8, XFontColor.Black, g: graphics);
             printer.AddVerticalSpace(graphics);
-            MessageBox.Show("printing totals...");
+         
             printer.AddString(string.Format("{0," + W(75) + "}{1," + W(5) + "}{2," + W(20) + ":C2}", "Bill Amount", "", Entity.Amount), XFont.R8, g: graphics);
             printer.AddString(string.Format("{0," + W(75) + "}{1," + W(5) + "}{2," + W(20) + ":C2}", "Discount", " %" + Entity.Discount, Entity.DiscountAmount), XFont.R8, XFontColor.Gray, g: graphics);
             printer.AddString(string.Format("{0," + W(75) + "}{1," + W(5) + "}{2," + W(20) + ":C2}", "Subtotal", "", Entity.Subtotal), XFont.R8, g: graphics);
             printer.AddString(string.Format("{0," + W(75) + "}{1," + W(5) + "}{2," + W(20) + ":C2}", "Tax", " %" + Entity.Tax, Entity.TaxAmount), XFont.R8, XFontColor.Gray, g: graphics);
             printer.AddString(string.Format("{0," + W(75) + "}{1," + W(5) + "}{2," + W(20) + ":C2}", "Total", "", Entity.Total), XFont.B8, g: graphics);
 
-            MessageBox.Show("printing transactions...");
             if (Entity.Transactions != null && Entity.Transactions.Count > 0 && chkWithPayment.Checked)
             {
                 printer.AddVerticalSpace(graphics);
@@ -505,15 +522,18 @@ namespace WirelessPOS
             printer.AddString(string.Format("{0," + W(75) + "}{1," + W(5) + "}{2," + W(20) + ":C2}", "Paid", "", Entity.Paid), XFont.R8, XFontColor.Gray, g: graphics);
             printer.AddString(string.Format("{0," + W(75) + "}{1," + W(5) + "}{2," + W(20) + ":C2}", "Due", "", Entity.Due), XFont.B8, g: graphics);
 
-            if (Entity.Policies != null && Entity.Policies.Count > 0 && chkPPolicies.Checked)
+            if (richTextBox1.Text.Length > 0 && chkPPolicies.Checked)
             {
                 printer.AddVerticalSpace(graphics);
                 printer.AddString(string.Format("{0,-" + W(50) + "}", "Policies"), XFont.B8, XFontColor.Gray, g: graphics);
                 string trxformat = "{0,-" + W(5) + "}{1,-" + W(95) + "}";
                 int sr = 1;
-                foreach (var policy in Entity.Policies)
+
+                var lines = richTextBox1.Text.Split('\n');
+
+                foreach (var ln in lines)
                 {
-                    var statement = new XFString(W(90), policy.Statement);
+                    var statement = new XFString(W(90), ln);
                     if (statement.StringLines.Count() > 0)
                     {
                         printer.AddString(string.Format(trxformat,
@@ -557,17 +577,7 @@ namespace WirelessPOS
             InvalidateForm();
         }
 
-        private void Button1_Click_1(object sender, EventArgs e)
-        {
-
-            var view = new PolicySelectionView(Adapter);
-            var result = view.ShowDialog(this);
-            if (result == DialogResult.OK)
-            {
-                Entity.Policies = view.SelectedPolicies?.ToList();
-                BindPolicies();
-            }
-        }
+       
 
         private void BtnPrint_Click(object sender, EventArgs e)
         {
@@ -575,6 +585,28 @@ namespace WirelessPOS
             PrintReceipt(printer);
 
             printer.Print(this, true);
+        }
+
+        private void chkTax_CheckedChanged(object sender, EventArgs e)
+        {
+            InvalidateTaxControls();
+        }
+
+        private void InvalidateTaxControls()
+        {
+            if (chkTax.Checked)
+            {
+                chkIncTax.Text = Properties.Settings.Default.Tax.ToString();
+                chkIncTax.Enabled = true;
+
+            }
+            else
+            {
+                chkIncTax.Text = 0.ToString();
+                chkIncTax.Enabled = false;
+            }
+
+            ValidateChildren();
         }
     }
 }

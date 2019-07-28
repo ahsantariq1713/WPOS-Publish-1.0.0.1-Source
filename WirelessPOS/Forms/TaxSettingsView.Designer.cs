@@ -37,6 +37,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.mySqlConnectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mySqlConnectionBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -44,6 +47,9 @@
             // panel
             // 
             this.panel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel.Controls.Add(this.checkBox1);
+            this.panel.Controls.Add(this.label3);
+            this.panel.Controls.Add(this.label4);
             this.panel.Controls.Add(this.label14);
             this.panel.Controls.Add(this.btnSaveClose);
             this.panel.Controls.Add(this.label13);
@@ -54,7 +60,7 @@
             this.panel.Location = new System.Drawing.Point(10, 10);
             this.panel.Name = "panel";
             this.panel.Padding = new System.Windows.Forms.Padding(1);
-            this.panel.Size = new System.Drawing.Size(349, 114);
+            this.panel.Size = new System.Drawing.Size(349, 146);
             this.panel.TabIndex = 0;
             // 
             // label14
@@ -78,7 +84,7 @@
             this.btnSaveClose.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveClose.Image = global::WirelessPOS.Properties.Resources.icons8_save_close_17px;
             this.btnSaveClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveClose.Location = new System.Drawing.Point(254, 78);
+            this.btnSaveClose.Location = new System.Drawing.Point(254, 110);
             this.btnSaveClose.Margin = new System.Windows.Forms.Padding(0, 5, 5, 5);
             this.btnSaveClose.Name = "btnSaveClose";
             this.btnSaveClose.Size = new System.Drawing.Size(89, 30);
@@ -92,7 +98,7 @@
             // 
             this.label13.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label13.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(1, 73);
+            this.label13.Location = new System.Drawing.Point(1, 104);
             this.label13.Margin = new System.Windows.Forms.Padding(0);
             this.label13.Name = "label13";
             this.label13.Padding = new System.Windows.Forms.Padding(5);
@@ -143,12 +149,52 @@
             // 
             this.mySqlConnectionBindingSource.DataSource = typeof(WirelessPOS.Utility.MySqlConnection);
             // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(102, 73);
+            this.label3.Margin = new System.Windows.Forms.Padding(0);
+            this.label3.Name = "label3";
+            this.label3.Padding = new System.Windows.Forms.Padding(5);
+            this.label3.Size = new System.Drawing.Size(246, 30);
+            this.label3.TabIndex = 24;
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Image = global::WirelessPOS.Properties.Resources.icons8_tax_20px;
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label4.Location = new System.Drawing.Point(1, 73);
+            this.label4.Margin = new System.Windows.Forms.Padding(0);
+            this.label4.Name = "label4";
+            this.label4.Padding = new System.Windows.Forms.Padding(5);
+            this.label4.Size = new System.Drawing.Size(100, 30);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Include";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.White;
+            this.checkBox1.Checked = global::WirelessPOS.Properties.Settings.Default.IncludeTax;
+            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::WirelessPOS.Properties.Settings.Default, "IncludeTax", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.checkBox1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(109, 81);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 25;
+            this.checkBox1.UseVisualStyleBackColor = false;
+            // 
             // TaxSettingsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(369, 134);
+            this.ClientSize = new System.Drawing.Size(369, 166);
             this.Controls.Add(this.panel);
             this.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -172,5 +218,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.BindingSource mySqlConnectionBindingSource;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

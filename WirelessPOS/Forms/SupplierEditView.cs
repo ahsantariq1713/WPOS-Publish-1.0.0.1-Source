@@ -92,6 +92,11 @@ namespace WirelessPOS
 
         private async void BtnSave_Click(object sender, EventArgs e)
         {
+            if (Entity.HasErrors(out string errors))
+            {
+                Message.Error("Please fix the following errors to continue:\n" + errors);
+                return;
+            }
             if (btnSave.IsBusy()) return;
             btnSave.MarkBusy(out Image image, out Color color);
             var found =
